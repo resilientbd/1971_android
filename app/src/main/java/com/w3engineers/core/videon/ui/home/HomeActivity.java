@@ -168,7 +168,7 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
         getFeaturedVideosFromServer();
         getMostPopularVideosFromServer();
        // getCategoryVideosFromServer();
-        retrieveAllPostRecentVideosDataFromServer();
+        //retrieveAllPostRecentVideosDataFromServer();
 
 
         checkInternetConnection();

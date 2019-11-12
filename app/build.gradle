@@ -14,7 +14,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.w3engineers.core.videon"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 28
         versionCode 21
         versionName "2.1.3"

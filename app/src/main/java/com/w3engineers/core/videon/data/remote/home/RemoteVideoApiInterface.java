@@ -40,7 +40,7 @@ public interface RemoteVideoApiInterface {
      * Request to server for the featured videos
      * */
     @FormUrlEncoded
-    @POST("public/api/video/featured.php")
+    @POST("public/api/video/popular.php")
     Call<ApiCommonDetailListResponse> getFeaturedVideos(@Field("api_token") String api_token, @Field("page") String pageNo);
 
 
@@ -49,7 +49,7 @@ public interface RemoteVideoApiInterface {
      * Request to server for the popular videos
      * */
     @FormUrlEncoded
-    @POST("public/api/video/popular.php")
+    @POST("public/api/video/recent.php")
     Call<ApiCommonDetailListResponse> getMostPopularVideos(@Field("api_token") String api_token, @Field("page") String pageNo);
 
 

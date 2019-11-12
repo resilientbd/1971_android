@@ -54,4 +54,10 @@
     <color name="transparent">#00000000</color>
 
 
+    <color name="audio_color">#9099FF</color>
+    <color name="document_color">#102689</color>
+    <color name="photo_color">#F9B154</color>
+    <color name="video_color">#FE7F52</color>
+
+
 </resources>

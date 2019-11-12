@@ -58,14 +58,14 @@
     <string name="already_account_message">Already have an Account?</string>
     <string name="text_forgot_password_message">Forgot Your Password?</string>
     <string name="facebook_app_id">1045491952320880</string>
-    <string name="text_home_title">Videon</string>
+    <string name="text_home_title">Welcome To 1971</string>
     <string name="text_home_search">&#160;Search</string>
     <string name="home_live_tv">Live TV</string>
-    <string name="home_featured">Featured</string>
-    <string name="text_home_most_popular">Most Popular</string>
+    <string name="home_featured">Popular Videos</string>
+    <string name="text_home_most_popular">Recent Upload</string>
     <string name="text_game_thrones">Game thrones</string>
     <string name="text_tv_series">TV Series</string>
-    <string name="home_text_most_recent">Most Recent</string>
+    <string name="home_text_most_recent">Recent Upload</string>
 
     <!--setting page-->
     <string name="Setting_text">Settings</string>
