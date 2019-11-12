@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_home"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_56"
+            android:background="@color/white"
+            android:textSize="@dimen/text_toolbar_title_size"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_back"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:titleTextColor="@color/color_home_category_title" />
+
+
+        <EditText
+            android:id="@+id/edit_text_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_45"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:layout_marginRight="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_8"
+            android:background="@drawable/drawable_search_edit_text_state"
+            android:drawableLeft="@drawable/ic_search"
+            android:hint="@string/text_home_search"
+            android:inputType="text"
+            android:drawablePadding="@dimen/padding_12"
+            android:paddingLeft="@dimen/padding_16"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_home"
+            app:queryHint="@string/text_home_search"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            app:searchHintIcon="@drawable/ic_search" />
+
+        <com.w3engineers.ext.strom.application.ui.widget.BaseRecyclerView
+            android:id="@+id/base_recycler_view_see_all_videos"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:layout_marginTop="@dimen/margin_16"
+            app:brv_defaultAnimation="false"
+            app:brv_emptyLayoutId="@id/emptyLayoutId"
+            app:brv_viewMode="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/adView"
+            android:scrollbars="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_search" />
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraint_layout_data_not_found"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/margin_16"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_search">
+            <com.w3engineers.core.videon.ui.videodetails.SquareImageView
+                android:id="@+id/squareImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="@dimen/no_data_image_tranparency"
+                android:minWidth="@dimen/height_150"
+                android:minHeight="@dimen/height_150"
+                android:src="@drawable/ic_box" />
+            <TextView
+                android:id="@+id/text_view_data_not_found"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_title"
+                android:text="@string/activity_data_not_found_see_all_new"
+                android:fontFamily="@font/helveticabold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/margin_10"
+                app:layout_constraintTop_toBottomOf="@+id/squareImageView"
+                android:visibility="visible"/>
+        </android.support.constraint.ConstraintLayout>
+        <ProgressBar
+            android:id="@+id/progress_bar_circular"
+            android:layout_width="@dimen/width_50"
+            android:layout_height="@dimen/height_50"
+            android:elevation="@dimen/elevation_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/adView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center"
+            android:orientation="vertical"
+            android:minHeight="@dimen/height_50"
+            ads:layout_constraintBottom_toBottomOf="parent"
+            ads:layout_constraintLeft_toLeftOf="parent"
+            ads:layout_constraintRight_toRightOf="parent" >
+
+
+
+
+        </LinearLayout>
+        <!--For empty layout id-->
+        <TextView
+            android:id="@+id/emptyLayoutId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>

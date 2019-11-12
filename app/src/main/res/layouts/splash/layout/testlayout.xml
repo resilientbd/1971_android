@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_home"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_56"
+            android:background="@color/white"
+            android:textSize="@dimen/text_toolbar_title_size"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/logo"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="@string/text_home_title"
+            app:titleTextColor="@color/color_toolbar_home_title" />
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            ads:layout_constraintBottom_toBottomOf="parent"
+            ads:layout_constraintEnd_toEndOf="parent"
+            ads:layout_constraintStart_toStartOf="parent"
+            ads:layout_constraintTop_toBottomOf="@+id/toolbar_home">
+
+
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/nested_scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_home">
+
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/progress_layer"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@android:color/white"
+                        android:elevation="@dimen/elevation_4"
+                        android:visibility="gone"
+                        ads:layout_constraintBottom_toBottomOf="parent"
+                        ads:layout_constraintLeft_toLeftOf="parent"
+                        ads:layout_constraintRight_toRightOf="parent"
+                        ads:layout_constraintTop_toTopOf="parent"/>
+
+                    <EditText
+                        android:id="@+id/edit_text_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_45"
+                        android:layout_marginLeft="@dimen/margin_16"
+                        android:layout_marginRight="@dimen/margin_16"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:background="@drawable/drawable_search_edit_text_state"
+                        android:drawableLeft="@drawable/ic_search"
+                        android:drawablePadding="@dimen/padding_12"
+                        android:hint="@string/text_home_search"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingLeft="@dimen/padding_16"
+                        android:singleLine="true"
+                        android:textColorHint="@color/color_search_text_hint"
+                        app:iconifiedByDefault="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:searchHintIcon="@drawable/ic_search_grey" />
+                    <View
+                        android:id="@+id/view_separator1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_1px"
+                        android:layout_marginTop="@dimen/margin_16"
+                        android:background="@color/color_home_separator_line"
+                        app:layout_constraintTop_toBottomOf="@+id/edit_text_search" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        ads:layout_constraintTop_toBottomOf="@id/view_separator1"
+                        >
+                        <!--section category -->
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/constraint_layout_category_section"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_16"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view_separator1">
+
+                            <com.w3engineers.ext.strom.application.ui.widget.BaseRecyclerView
+                                android:id="@+id/base_recycler_view_category"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/margin_16"
+
+                                android:clipToPadding="false"
+                                android:paddingEnd="@dimen/padding_6"
+                                android:paddingLeft="@dimen/padding_16"
+                                android:paddingRight="@dimen/padding_6"
+                                android:paddingStart="@dimen/padding_16"
+                                android:visibility="gone"
+                                app:brv_defaultAnimation="false"
+                                app:brv_emptyLayoutId="@id/emptyLayoutId"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <ProgressBar
+                                android:id="@+id/progress_bar_category"
+                                android:layout_width="@dimen/width_30"
+                                android:layout_height="@dimen/height_30"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <View
+                                android:id="@+id/view_separator2"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_1px"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:background="@color/color_home_separator_line"
+                                app:layout_constraintTop_toBottomOf="@+id/base_recycler_view_category" />
+                        </android.support.constraint.ConstraintLayout>
+
+
+                        <!--For empty layout id-->
+                        <TextView
+                            android:id="@+id/emptyLayoutId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
+
+                        <!--section live tv start-->
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/constraint_layout_live_tv_section"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="100dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraint_layout_category_section">
+
+                            <TextView
+                                android:id="@+id/text_view_live_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_16"
+                                android:layout_marginStart="@dimen/margin_16"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:text="@string/home_live_tv"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                                android:textColor="@color/color_home_category_title"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <Button
+                                android:id="@+id/button_see_all_live"
+                                style="?android:attr/borderlessButtonStyle"
+                                android:layout_width="@dimen/width_80"
+                                android:layout_height="@dimen/height_25"
+                                android:layout_marginEnd="@dimen/margin_16"
+                                android:layout_marginRight="@dimen/margin_16"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:background="@drawable/drawable_button_see_all_state"
+                                android:fontFamily="@font/helvlight_regular"
+                                android:gravity="center"
+                                android:text="See All"
+                                android:textAllCaps="false"
+                                android:textColor="@color/drawable_button_see_all_text_color_state"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.w3engineers.ext.strom.application.ui.widget.BaseRecyclerView
+                                android:id="@+id/base_recycler_view_live_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:clipToPadding="false"
+                                android:paddingEnd="@dimen/padding_6"
+                                android:paddingLeft="@dimen/padding_14"
+                                android:paddingRight="@dimen/padding_6"
+                                android:paddingStart="@dimen/padding_14"
+                                android:visibility="gone"
+                                app:brv_defaultAnimation="false"
+                                app:brv_emptyLayoutId="@id/emptyLayoutId"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/text_view_live_tv" />
+
+                            <ProgressBar
+                                android:id="@+id/progress_bar_live_tv"
+                                android:layout_width="@dimen/width_30"
+                                android:layout_height="@dimen/height_30"
+                                app:layout_constraintBottom_toTopOf="@+id/view_separator3"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <View
+                                android:id="@+id/view_separator3"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_1px"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:background="@color/color_home_separator_line"
+                                app:layout_constraintTop_toBottomOf="@+id/base_recycler_view_live_tv" />
+                        </android.support.constraint.ConstraintLayout>
+
+                        <!--section featured start-->
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/constraint_layout_featured_section"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraint_layout_live_tv_section">
+
+                            <TextView
+                                android:id="@+id/text_view_featured"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_16"
+                                android:layout_marginStart="@dimen/margin_16"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:text="@string/home_featured"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                                android:textColor="@color/color_home_category_title"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <Button
+                                android:id="@+id/button_see_all_featured"
+                                style="?android:attr/borderlessButtonStyle"
+                                android:layout_width="@dimen/width_80"
+                                android:layout_height="@dimen/height_25"
+                                android:layout_marginEnd="@dimen/margin_16"
+                                android:layout_marginRight="@dimen/margin_16"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:background="@drawable/drawable_button_see_all_state"
+                                android:fontFamily="@font/helvlight_regular"
+                                android:gravity="center"
+                                android:text="See All"
+                                android:textAllCaps="false"
+                                android:textColor="@color/drawable_button_see_all_text_color_state"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.w3engineers.ext.strom.application.ui.widget.BaseRecyclerView
+                                android:id="@+id/base_recycler_view_featured"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/margin_16"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:clipToPadding="false"
+                                android:paddingEnd="@dimen/padding_6"
+                                android:paddingLeft="@dimen/padding_16"
+                                android:paddingRight="@dimen/padding_6"
+                                android:paddingStart="@dimen/padding_16"
+                                android:visibility="gone"
+                                app:brv_defaultAnimation="false"
+                                app:brv_emptyLayoutId="@id/emptyLayoutId"
+                                app:layout_constraintTop_toBottomOf="@+id/text_view_featured" />
+
+                            <ProgressBar
+                                android:id="@+id/progress_bar_featured"
+                                android:layout_width="@dimen/width_30"
+                                android:layout_height="@dimen/height_30"
+                                app:layout_constraintBottom_toTopOf="@+id/view_separator4"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <View
+                                android:id="@+id/view_separator4"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_1px"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:background="@color/color_home_separator_line"
+                                app:layout_constraintTop_toBottomOf="@+id/base_recycler_view_featured" />
+                        </android.support.constraint.ConstraintLayout>
+
+                        <!--section popular start-->
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/constraint_layout_popular_section"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraint_layout_featured_section">
+
+                            <TextView
+                                android:id="@+id/text_view_most_popular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_16"
+                                android:layout_marginStart="@dimen/margin_16"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:text="@string/text_home_most_popular"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                                android:textColor="@color/color_home_category_title"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <Button
+                                android:id="@+id/button_see_all_most_popular"
+                                style="?android:attr/borderlessButtonStyle"
+                                android:layout_width="@dimen/width_80"
+                                android:layout_height="@dimen/height_25"
+                                android:layout_marginEnd="@dimen/margin_16"
+                                android:layout_marginRight="@dimen/margin_16"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:background="@drawable/drawable_button_see_all_state"
+                                android:fontFamily="@font/helvlight_regular"
+                                android:gravity="center"
+                                android:text="See All"
+                                android:textAllCaps="false"
+                                android:textColor="@color/drawable_button_see_all_text_color_state"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.w3engineers.ext.strom.application.ui.widget.BaseRecyclerView
+                                android:id="@+id/base_recycler_view_most_popular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/margin_16"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:clipToPadding="false"
+                                android:paddingEnd="@dimen/padding_6"
+                                android:paddingLeft="@dimen/padding_16"
+                                android:paddingRight="@dimen/padding_6"
+                                android:paddingStart="@dimen/padding_16"
+                                android:visibility="gone"
+                                app:brv_defaultAnimation="false"
+                                app:brv_emptyLayoutId="@id/emptyLayoutId"
+                                app:layout_constraintTop_toBottomOf="@+id/text_view_most_popular" />
+
+                            <ProgressBar
+                                android:id="@+id/progress_bar_most_popular"
+                                android:layout_width="@dimen/width_30"
+                                android:layout_height="@dimen/height_30"
+                                app:layout_constraintBottom_toTopOf="@+id/view_separator5"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <View
+                                android:id="@+id/view_separator5"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_1px"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:background="@color/color_home_separator_line"
+                                app:layout_constraintTop_toBottomOf="@+id/base_recycler_view_most_popular" />
+
+                        </android.support.constraint.ConstraintLayout>
+
+                        <!--section recent start-->
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/most_recent_layer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraint_layout_popular_section">
+
+                            <TextView
+                                android:id="@+id/text_view_most_recent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_16"
+                                android:layout_marginStart="@dimen/margin_16"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:text="@string/home_text_most_recent"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                                android:textColor="@color/color_home_category_title"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <Button
+                                android:id="@+id/button_see_all_most_recent"
+                                style="?android:attr/borderlessButtonStyle"
+                                android:layout_width="@dimen/width_80"
+                                android:layout_height="@dimen/height_25"
+                                android:layout_marginEnd="@dimen/margin_16"
+                                android:layout_marginRight="@dimen/margin_16"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:background="@drawable/drawable_button_see_all_state"
+                                android:fontFamily="@font/helvlight_regular"
+                                android:gravity="center"
+                                android:text="See All"
+                                android:textAllCaps="false"
+                                android:textColor="@color/drawable_button_see_all_text_color_state"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.w3engineers.ext.strom.application.ui.widget.BaseRecyclerView
+                                android:id="@+id/base_recycler_view_most_recent"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/margin_10"
+                                android:layout_marginTop="@dimen/margin_16"
+                                android:clipToPadding="false"
+                                android:descendantFocusability="blocksDescendants"
+                                android:paddingEnd="@dimen/padding_6"
+                                android:paddingLeft="@dimen/padding_16"
+                                android:paddingRight="@dimen/padding_6"
+                                android:paddingStart="@dimen/padding_16"
+                                android:visibility="visible"
+                                ads:layout_constraintBottom_toBottomOf="parent"
+                                app:brv_defaultAnimation="false"
+                                app:brv_emptyLayoutId="@id/emptyLayoutId"
+                                app:layout_constraintTop_toBottomOf="@+id/text_view_most_recent" />
+
+                            <ProgressBar
+                                android:id="@+id/progress_bar_most_recent"
+                                android:layout_width="@dimen/width_30"
+                                android:layout_height="@dimen/height_30"
+                                ads:layout_constraintTop_toBottomOf="@+id/base_recycler_view_most_recent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+                        </android.support.constraint.ConstraintLayout>
+
+                    </LinearLayout>
+
+
+
+
+                </android.support.constraint.ConstraintLayout>
+
+
+            </android.support.v4.widget.NestedScrollView>
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+        <View
+            android:id="@+id/view_toolbar_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_3"
+            android:background="@drawable/dropshadow"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_home" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>

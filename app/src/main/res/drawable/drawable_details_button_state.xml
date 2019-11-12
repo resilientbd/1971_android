@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+  <!--  <item
+        android:state_focused="true"
+        android:state_pressed="true"
+        android:drawable="@drawable/ic_playlist_active"/>
+    <item
+        android:state_focused="false"
+        android:state_pressed="true"
+        android:drawable="@drawable/ic_playlist_active" />
+
+    <item android:drawable="@drawable/ic_playlist" />-->
+
+
+    <item android:state_pressed="true"
+        android:drawable="@drawable/drawable_button_details_active" />
+    <item android:state_focused="true"
+        android:drawable="@drawable/drawable_button_details_active"/>
+    <item android:drawable="@drawable/drawable_button_details_inactive"/>  <!--default-->
+</selector>

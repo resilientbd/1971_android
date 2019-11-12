@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_layout_suggestion_videos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_8"
+        android:layout_marginEnd="@dimen/margin_8">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/square_image_view_suggestion"
+            android:layout_width="@dimen/width_120"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            app:riv_corner_radius="@dimen/radius_5"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:src="@drawable/default_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_view_suggestion_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@string/item_suggestion_videos_name"
+            android:textColor="@color/color_home_category_title"
+            android:textSize="@dimen/text_body"
+            app:layout_constraintEnd_toEndOf="@+id/square_image_view_suggestion"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/square_image_view_suggestion" />
+
+        <TextView
+            android:id="@+id/text_view_suggestion_tv_series_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+
+
+
+            android:textColor="@color/color_small_text"
+            android:textSize="@dimen/text_small_body"
+            app:layout_constraintEnd_toEndOf="@+id/square_image_view_suggestion"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_suggestion_title" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_circular"
+            android:layout_width="@dimen/width_30"
+            android:layout_height="@dimen/height_30"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/square_image_view_suggestion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

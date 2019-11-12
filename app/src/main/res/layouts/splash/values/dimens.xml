@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="maxlen">15</dimen>
+    <dimen name="text_size_25">25sp</dimen>
+    <dimen name="controller_padding">30dp</dimen>
+</resources>

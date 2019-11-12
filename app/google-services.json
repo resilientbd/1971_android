@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "657720538107",
+    "firebase_url": "https://videonpie.firebaseio.com",
+    "project_id": "videonpie",
+    "storage_bucket": "videonpie.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657720538107:android:3a1a4023191c1ed05fd15e",
+        "android_client_info": {
+          "package_name": "com.w3engineers.core.videon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657720538107-uuic8hivc51tal0e2o3f3dnb9njlhlk5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEynljH3eq03DKfD1XY8sPUouhigBM6bY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657720538107-uuic8hivc51tal0e2o3f3dnb9njlhlk5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

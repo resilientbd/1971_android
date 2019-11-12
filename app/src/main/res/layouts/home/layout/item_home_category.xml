@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_layout_category"
+        android:layout_width="@dimen/width_90"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:layout_marginRight="@dimen/margin_8">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/round_image_view_cat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:elevation="@dimen/elevation_20"
+            android:src="@drawable/default_category_img"
+            app:riv_corner_radius="2dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/text_view_cat_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            android:fontFamily="@font/helveticabold"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:text="@string/text_movies_item_live_tv"
+            android:textColor="@color/color_home_category_title"
+            android:textSize="@dimen/text_body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/round_image_view_cat" />
+
+
+        <ProgressBar
+            android:id="@+id/progress_bar_circular"
+            android:layout_width="@dimen/width_30"
+            android:layout_height="@dimen/width_30"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/round_image_view_cat"
+            app:layout_constraintStart_toStartOf="@+id/round_image_view_cat"
+            app:layout_constraintTop_toTopOf="@+id/round_image_view_cat"
+            app:layout_constraintBottom_toBottomOf="@+id/round_image_view_cat"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>

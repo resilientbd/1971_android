@@ -1,0 +1,143 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    signingConfigs {
+        //configure your jks file location here
+//        config {
+//            keyAlias 'key0'
+//            keyPassword '123456'
+//            storeFile file('F:/appkey/videon.jks')
+//            storePassword '123456'
+//        }
+    }
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.w3engineers.core.videon"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 21
+        versionName "2.1.3"
+        multiDexEnabled true
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    //To use databinding android force module wise configuration
+    dataBinding {
+        enabled true
+    }
+    // Support Java8 version
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+          // signingConfig signingConfigs.config
+        }
+        debug {
+           // signingConfig signingConfigs.config
+        }
+    }
+    sourceSets {
+        main {
+            //An experimental approach to group all layouts. If developers does not like we can simply
+            //ignore grouping in this way
+            res.srcDirs = [
+                    'src/main/res/layouts/splash',
+                    'src/main/res/layouts/videodetails',
+                    'src/main/res/layouts/util',
+                    'src/main/res/layouts/login',
+                    'src/main/res/layouts/nologin',
+                    'src/main/res/layouts/signup',
+                    'src/main/res/layouts/home',
+                    'src/main/res/layouts/channellist',
+                    'src/main/res/layouts/setting',
+                    'src/main/res/layouts/seeallvideos',
+                    'src/main/res/layouts/editprofile',
+                    'src/main/res/layouts/myprofile',
+                    'src/main/res/layouts/favourite',
+                    'src/main/res/layouts/playlist',
+                    'src/main/res/layouts/searchmovies',
+                    'src/main/res/layouts/forgotpassword',
+                    'src/main/res/layouts/aboutus',
+                    'src/main/res/layouts/privacypolicy',
+                    'src/main/res/layouts/createnewpassword',
+                    'src/main/res/layouts/empty',
+                    'src/main/res/layouts',
+                    'src/main/res/layouts/loadingerror',
+                    'src/main/res'
+            ]
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //apache
+    implementation 'org.apache.commons:commons-collections4:4.1'
+    implementation 'org.apache.commons:commons-lang3:3.6'
+    //status bar
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
+    implementation 'com.android.support:multidex:1.0.3'
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation 'com.google.code.gson:gson:2.8.2'
+    // Circular ImageView
+    implementation 'com.mikhaellopez:circularimageview:3.2.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.ms-square:etsyblur:0.2.1'
+    implementation 'com.android.support:support-v4:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //circular progressbar
+    implementation 'com.mikhaellopez:circularprogressbar:1.1.1'
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    // Facebook Android SDK (only required for Facebook Login)
+    // Used in FacebookLoginActivity.
+    implementation 'com.facebook.android:facebook-login:4.38.1'
+    //Google sign in dependency
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    //for ad
+    implementation 'com.google.firebase:firebase-ads:17.2.0'
+    //Firebase section
+    //firebase core
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+    //firebase crashlytics
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.0'
+    //firebase push/messaging
+    implementation 'com.google.firebase:firebase-messaging:18.0.0'
+    //Vimo Extractor
+    implementation 'com.github.ed-george:AndroidVimeoExtractor:1.1.2'
+    //Youtube Extractor
+    implementation 'com.github.HaarigerHarald:android-youtubeExtractor:master-SNAPSHOT'
+    implementation 'com.android.support:exifinterface:28.0.0'
+    // Framework integration
+    implementation 'com.github.w3-engineers:strom:0.0.14'
+    implementation project(':YouTubeAndroidPlayerApi')
+    //Bottom sheet
+    implementation 'org.michaelbel:bottomsheet:1.2.3'
+    //exoplayer
+    implementation 'com.google.android.exoplayer:exoplayer:2.9.6'
+    implementation 'com.google.android.exoplayer:extension-rtmp:2.9.6'
+    implementation 'com.google.android.exoplayer:exoplayer-hls:2.9.6'
+
+    //crashlytics
+    // Add dependency
+
+}
+
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'io.fabric'

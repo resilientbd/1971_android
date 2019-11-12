@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_home"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_56"
+            android:background="@color/white"
+            android:textSize="@dimen/text_toolbar_title_size"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_back"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/color_toolbar_home_title"
+                android:textSize="@dimen/text_title" />
+        </android.support.v7.widget.Toolbar>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_home">
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <EditText
+                    android:id="@+id/edit_text_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_45"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:background="@drawable/drawable_search_edit_text_state"
+                    android:drawableLeft="@drawable/ic_search"
+                    android:hint="@string/text_home_search"
+                    android:visibility="gone"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:paddingLeft="@dimen/padding_16"
+                    android:drawablePadding="@dimen/padding_12"
+                    android:singleLine="true"
+                    app:iconifiedByDefault="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:searchHintIcon="@drawable/ic_search_grey" />
+
+                <View
+                    android:id="@+id/view_separator1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_1px"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:background="@color/color_home_separator_line"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_text_search" />
+
+                <ImageView
+                    android:id="@+id/image_view_empty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:src="@drawable/ic_empty_img"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_separator1" />
+
+                <TextView
+                    android:id="@+id/text_view_please_access"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/helveticabold"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_16"
+                    android:text="@string/text_please_login"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_home_category_title"
+                    android:textSize="@dimen/text_body"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_view_empty" />
+
+                <com.w3engineers.ext.strom.application.ui.widget.BaseButton
+                    android:id="@+id/button_login"
+                    android:layout_width="@dimen/width_130"
+                    android:layout_height="@dimen/height_40"
+                    android:layout_marginLeft="@dimen/form_padding_space"
+                    android:layout_marginRight="@dimen/form_padding_space"
+                    android:fontFamily="@font/helveticabold"
+                    android:text="@string/base_button_login_empty_activity"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/white"
+                    app:bb_drawable="@drawable/gradient_button_orange"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_please_access" />
+            </android.support.constraint.ConstraintLayout>
+
+
+        </ScrollView>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

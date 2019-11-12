@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#070A33</color>
+    <color name="colorPrimaryDark">#00000f</color>
+    <color name="colorAccent">#31315d</color>
+
+
+    <!--Home -->
+    <color name="color_toolbar_home_title">#070A33</color>
+    <color name="color_home_search_text">#B2B2B2</color>
+    <color name="color_search_text_hint">#CCCCCC</color>
+    <color name="color_home_search_background">#EBEBEB</color>
+    <color name="color_home_see_all">#00000f</color>
+    <color name="color_home_separator_line">#CCCCCC</color>
+    <color name="color_home_category_title">#404040</color>
+    <color name="color_home_small_text">#404040</color>
+    <color name="color_small_text">#AFAFAF</color>
+    <color name="tab_background_unselected">#EEEEEE</color>
+    <color name="color_details_page_icon">#B0B0B0</color>
+    <color name="tr_black">#80000000</color>
+
+
+    <color name="black">#000000</color>
+    <color name="transparent_black">#99000000</color>
+    <color name="grey_93">#FF9F9F9F</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="button_orange">#fe5824</color>
+    <color name="button_white">@android:color/white</color>
+    <color name="button_blue">#40579b</color>
+    <color name="button_green">#43bd42</color>
+    <color name="button_gray">#f1f5f8</color>
+    <color name="button_magenta">#ea2064</color>
+    <color name="button_yellow">#ff9807</color>
+    <color name="color_deep_purple">#9e005d</color>
+    <color name="light_blue">#55C8F0</color>
+
+    <!--need to be delete-->
+    <color name="primaryImagePick">#222222</color>
+    <color name="primary">#00BCD4</color>
+    <color name="primary_dark">#0097A7</color>
+    <color name="accent">#FFEB3B</color>
+    <color name="accent_translucent">#80FFEB3B</color>
+    <color name="accent_bright">#FFF493</color>
+
+    <color name="google_button">#E35342</color>
+    <color name="facebook_button">#244789</color>
+    <color name="layout_background">#FFFFFF</color>
+    <color name="dimond_shape_border_color">#CECECE</color>
+    <color name="gradient_level_1">#F95201</color>
+    <color name="gradient_level_2">#FA7200</color>
+    <color name="gradient_level_3">#FB8C00</color>
+
+    <color name="transparent">#00000000</color>
+
+
+</resources>

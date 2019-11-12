@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/login_parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/layout_background">
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_home"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_56"
+            android:background="@color/white"
+            android:textSize="@dimen/text_toolbar_title_size"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_back"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="@string/activity_sign_up_toolbar"
+            app:titleTextColor="@color/color_home_category_title" />
+
+        <ScrollView
+            android:id="@+id/login_scrollview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_home">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/focus_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <requestFocus />
+                </View>
+
+                <ImageView
+                    android:id="@+id/logoImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_32"
+
+                    android:src="@drawable/ic_logo_fav"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.w3engineers.ext.strom.application.ui.widget.BaseEditText
+                    android:id="@+id/edit_name"
+                    android:maxLength="15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/form_padding_space"
+                    android:layout_marginLeft="@dimen/form_padding_space"
+                    android:layout_marginRight="@dimen/form_padding_space"
+                    android:layout_marginStart="@dimen/form_padding_space"
+                    android:layout_marginTop="32dp"
+                    android:drawableLeft="@drawable/ic_user_grey"
+                    android:hint="@string/text_username"
+                    android:paddingTop="0dp"
+                    android:textSize="@dimen/text_size_16"
+                    android:inputType="text"
+                    app:bet_checkCharactersCountAtBeginning="true"
+                    app:bet_floatingLabel="highlight"
+                    app:bet_floatingLabelAlwaysShown="false"
+                    app:bet_floatingLabelTextSize="20sp"
+                    app:bet_primaryColor="@color/gradient_level_2"
+                    app:bet_textColor="@color/gradient_level_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/logoImage" />
+
+                <com.w3engineers.ext.strom.application.ui.widget.BaseEditText
+                    android:id="@+id/edit_email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/form_padding_space"
+                    android:layout_marginLeft="@dimen/form_padding_space"
+                    android:layout_marginRight="@dimen/form_padding_space"
+                    android:layout_marginStart="@dimen/form_padding_space"
+                    android:drawableLeft="@drawable/ic_mail_grey"
+                    android:hint="@string/text_email"
+                    android:inputType="textEmailAddress"
+                    android:paddingTop="0dp"
+                    android:textSize="@dimen/text_size_16"
+                    app:bet_checkCharactersCountAtBeginning="true"
+                    app:bet_floatingLabel="highlight"
+                    app:bet_floatingLabelAlwaysShown="false"
+                    app:bet_floatingLabelTextSize="20sp"
+                    app:bet_primaryColor="@color/gradient_level_2"
+                    app:bet_textColor="@color/gradient_level_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edit_name" />
+
+                <com.w3engineers.ext.strom.application.ui.widget.BaseEditText
+                    android:id="@+id/edit_password"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/form_padding_space"
+                    android:layout_marginLeft="@dimen/form_padding_space"
+                    android:layout_marginRight="@dimen/form_padding_space"
+                    android:layout_marginStart="@dimen/form_padding_space"
+                    android:drawableLeft="@drawable/ic_password_grey"
+                    android:hint="@string/text_password"
+                    android:paddingTop="0dp"
+                    android:textSize="@dimen/text_size_16"
+                    android:inputType="textPassword"
+                    app:bet_checkCharactersCountAtBeginning="true"
+                    app:bet_floatingLabel="highlight"
+                    app:bet_floatingLabelAlwaysShown="false"
+                    app:bet_floatingLabelTextSize="20sp"
+                    app:bet_primaryColor="@color/gradient_level_2"
+                    app:bet_textColor="@color/gradient_level_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edit_email" />
+
+                <com.w3engineers.ext.strom.application.ui.widget.BaseEditText
+                    android:id="@+id/edit_confirm_password"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/form_padding_space"
+                    android:layout_marginLeft="@dimen/form_padding_space"
+                    android:layout_marginRight="@dimen/form_padding_space"
+                    android:layout_marginStart="@dimen/form_padding_space"
+                    android:drawableLeft="@drawable/ic_password_grey"
+                    android:hint="@string/text_confirm_password"
+                    android:paddingTop="0dp"
+                    android:textSize="@dimen/text_size_16"
+                    android:inputType="textPassword"
+                    app:bet_checkCharactersCountAtBeginning="true"
+                    app:bet_floatingLabel="highlight"
+                    app:bet_floatingLabelAlwaysShown="false"
+                    app:bet_floatingLabelTextSize="20sp"
+                    app:bet_primaryColor="@color/gradient_level_2"
+                    app:bet_textColor="@color/gradient_level_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edit_password" />
+
+                <com.w3engineers.ext.strom.application.ui.widget.BaseButton
+                    android:id="@+id/btn_sign_up"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/form_padding_space"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:layout_marginRight="@dimen/form_padding_space"
+                    android:minHeight="50dp"
+                    android:text="@string/text_sign_up"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/helvlight_regular"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/white"
+                    app:bb_drawable="@drawable/gradient_button_orange"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/agreement_text_message" />
+
+                <TextView
+                    android:id="@+id/agreement_text_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:text="@string/sign_up_privacy_policy_text"
+                    app:layout_constraintStart_toEndOf="@+id/aggrement_checkbox"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_confirm_password" />
+
+                <TextView
+                    android:id="@+id/policy_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:text="@string/sign_up_link"
+                    android:paddingTop="@dimen/padding_8"
+                    android:paddingBottom="@dimen/padding_8"
+                    android:paddingRight="@dimen/padding_8"
+                    app:layout_constraintBottom_toBottomOf="@+id/agreement_text_message"
+                    app:layout_constraintStart_toEndOf="@+id/agreement_text_message"
+                    app:layout_constraintTop_toTopOf="@+id/agreement_text_message" />
+
+                <CheckBox
+                    android:id="@+id/aggrement_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/agreement_text_message"
+                    app:layout_constraintStart_toStartOf="@+id/edit_confirm_password"
+                    app:layout_constraintTop_toTopOf="@+id/agreement_text_message" />
+
+                <TextView
+                    android:id="@+id/text_sign_in_message"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="@dimen/margin_26"
+                    android:layout_marginLeft="@dimen/form_padding_space"
+                    android:layout_marginRight="@dimen/form_padding_space"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:text="@string/already_account_message"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_sign_up" />
+            </android.support.constraint.ConstraintLayout>
+        </ScrollView>
+    </android.support.constraint.ConstraintLayout>
+</layout>

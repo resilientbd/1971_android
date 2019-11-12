@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/radius_5"
+        android:background="@color/white"
+        android:padding="@dimen/padding_5"
+        android:layout_marginBottom="@dimen/margin_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_view_rate_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@color/color_home_category_title"
+                android:text="@string/dialog_rate_it_text_view"
+                android:fontFamily="@font/helveticabold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/margin_16"/>
+            <RatingBar
+                android:id="@+id/rating_bar_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                android:isIndicator="false"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_marginTop="@dimen/margin_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_rate_text"
+                />
+            <EditText
+                android:id="@+id/edit_text_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:hint="@string/text_write_a_review"
+                android:layout_marginLeft="@dimen/margin_32"
+                android:background="@drawable/drawable_review_edit_text_state"
+                android:layout_marginRight="@dimen/margin_32"
+                android:padding="10dp"
+                android:textSize="@dimen/text_body"
+                app:layout_constraintTop_toBottomOf="@+id/rating_bar_video"
+                />
+            <com.w3engineers.ext.strom.application.ui.widget.BaseButton
+                android:id="@+id/button_submit"
+                android:layout_width="@dimen/width_100"
+                android:layout_height="@dimen/height_40"
+                android:layout_marginLeft="@dimen/form_padding_space"
+                android:layout_marginRight="@dimen/form_padding_space"
+                android:layout_marginTop="@dimen/margin_16"
+                android:text="@string/diaglog_review_submit"
+                android:fontFamily="@font/helveticabold"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/white"
+                android:layout_marginBottom="@dimen/margin_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:bb_drawable="@drawable/gradient_button_orange"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_text_review" />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

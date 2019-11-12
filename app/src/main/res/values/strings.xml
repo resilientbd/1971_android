@@ -1,0 +1,242 @@
+<resources>
+    <!--app level values-->
+    <string name="app_name">Videon</string>
+
+    <string name="file_provider_authority">io.left.core.videon.fileprovider</string>
+    <string name="file_name_profile_image" translatable="false">profile_image</string>
+    <string name="error_picking_image" translatable="false">Could not pick image</string>
+    <string name="error_cropping_image" translatable="false">Could not crop image</string>
+    <string name="error_storage_permission_is_denied" translatable="false">Storage permission is needed</string>
+    <!--User entry-->
+    <string name="user_inserted_confirmation" translatable="false">User %s inserted</string>
+    <string name="user_inserted_empty_message" translatable="false">Please enter your info</string>
+    <string name="remote_user_call_with_null_api" translatable="false">Please enter your info</string>
+
+    <string name="insert">Insert</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="cancel">Cancel</string>
+    <string name="update">Update</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="add_user">Add user</string>
+    <string name="framework">FRAMEWORK</string>
+    <string name="show_data">Show data from DB</string>
+    <string name="save_data">Save Data in DB</string>
+    <string name="add_item">Add Item</string>
+    <string name="delete_confirmation">Do you want to delete?</string>
+
+    <!-- Admin panel api token credential -->
+    <!--Change this token according to your admin panel configuration -->
+    <string name="api_token_value" translatable="false">www</string>
+
+    <!--have to delete start-->
+    <string name="action_settings">Settings</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie. Fusce quis mauris a enim sollicitudin ultrices non eget velit. Aliquam eu pulvinar enim. Praesent libero nisl, ultricies vel maximus eu, maximus et nisi. Phasellus pharetra nec ligula vitae mollis. Quisque porttitor ornare magna, Vivamus sodales in ligula at sodales.Sed pulvinar fermentum risus ac viverra. Cras laoreet ligula quam, ac lacinia nisl elementum in. Aenean velit arcu, euismod a venenatis non, pulvinar pulvinar massa.</string>
+    <string name="home">Home</string>
+    <string name="favourite">Favourite</string>
+    <string name="downloaded" translatable="false">Downloaded</string>
+    <string name="more" translatable="false">More</string>
+    <string name="settings" translatable="false">Settings</string>
+    <!--end-->
+    <string name="fb_login_protocol_scheme">fb1045491952320880</string>
+    <string name="error_facebook_account_id_is_null" translatable="false">"Facebook Null"</string>
+    <!--<string name="share_message">Hi, I am watching this video on Videon App. To download the app follow the link: </string>-->
+    <string name="share_message">Hi, I am watching this video on Videon App.Download the app from playstore:  </string>
+    <string name="facebook_login_text">Login With Facebook</string>
+    <string name="google_login_text">Login With Google</string>
+    <string name="text_or">OR</string>
+    <string name="text_email">email</string>
+    <string name="text_password">password</string>
+    <string name="text_sign_in">Sign In</string>
+    <string name="sign_up_message">Sign Up</string>
+    <string name="promt_login_message">Not Login?</string>
+    <string name="text_login">Sign In</string>
+    <string name="text_username">username</string>
+    <string name="text_confirm_password">confirm password</string>
+    <string name="text_sign_up">Sign Up</string>
+    <string name="already_account_message">Already have an Account?</string>
+    <string name="text_forgot_password_message">Forgot Your Password?</string>
+    <string name="facebook_app_id">1045491952320880</string>
+    <string name="text_home_title">Videon</string>
+    <string name="text_home_search">&#160;Search</string>
+    <string name="home_live_tv">Live TV</string>
+    <string name="home_featured">Featured</string>
+    <string name="text_home_most_popular">Most Popular</string>
+    <string name="text_game_thrones">Game thrones</string>
+    <string name="text_tv_series">TV Series</string>
+    <string name="home_text_most_recent">Most Recent</string>
+
+    <!--setting page-->
+    <string name="Setting_text">Settings</string>
+    <string name="setting_push_notification">Push Notification</string>
+    <string name="setting_text_about_us">About us</string>
+    <string name="setting_text_contact_us">Contact us</string>
+    <string name="setting_privacy_policy"><![CDATA[Privacy & policy]]></string>
+    <string name="setting_sign_out">Sign Out</string>
+    <string name="setting_sign_in">sign in</string>
+    <!--edit profile-->
+    <string name="edit_profile_text">Edit Profile</string>
+    <string name="edit_profile_full_name">Full Name</string>
+    <string name="edit_profile_country">Country</string>
+    <string name="edit_profile_email">Email</string>
+    <string name="edit_profile_change_password">Change password</string>
+    <string name="edit_profile_confirm_password">Confirm Password</string>
+    <string name="video_details_video_title">Video Title</string>
+    <string name="details_rating_4_6" translatable="false">4.6</string>
+    <string name="text_suggested_videos">Suggested videos</string>
+    <string name="video_details_text_rate_this">Rate This</string>
+
+    <string name="sample_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="sample_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="interstital_ad_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_playlist">Playlist</string>
+    <string name="login">Sign In</string>
+    <string name="log_out">Sign Out</string>
+    <string name="sign_out_warning">Are you sure to Sign Out?</string>
+    <string name="sign_out_success">Sign Out success</string>
+    <string name="sign_out_failed">Sign Out failed!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="my_profile_user_name">User Name</string>
+    <string name="my_profile_email">UserEmail@w3engineers.com</string>
+    <string name="search_video_title">Video title</string>
+    <string name="search_videon_movies">videon movies</string>
+    <string name="search_drama" translatable="false">Drama</string>
+    <string name="search_duration_1h_30m" translatable="false">1h 30m</string>
+    <string name="search_text_1_hour_ago" translatable="false">1 hour ago</string>
+    <string name="text_we_will_send_message" translatable="false">Please enter your email address and we\'ll send you an email to reset your password</string>
+    <string name="forgot_pass_email_address">Email Address</string>
+    <string name="forgot_pass_reset_password">Reset Password</string>
+    <string name="text_old_password">Old password</string>
+    <string name="text_dummy_about_us"><![CDATA[<h1>About Videon</h1> \t\t<h4>A forever-free version of videon that’s YOURS, and yours for life. Preview and play all you want - there’s lots of videos ( Movie , Drama, Song and funny video) to discover.</h4> \t\t<h4>Let\'s Play!</h4> \t\t<ul> \t\t\t<li>Watch on any android mobile device</li> \t\t\t<li>You can even Download & Watch Offline for lifetime</li> \t\t\t<li>You can set the PLAYLIST and FAVOURITE list</li> \t\t\t<li>FRESH ON THE FEED: Get first dibs on bite-sized videos, offers & more!</li> \t\t\t<li>Everything from LIVE news and music, to lifestyle and events. Stream your favourite channels now on videon LIVE.</li> \t\t\t<li>Dedicated kids section</li> \t\t</ul>]]></string>
+
+    <string name="text_please_login">Please Login to get access your profile</string>
+    <string name="title_featured_video">Featured Videos</string>
+    <string name="title_most_popular">Most Popular Videos</string>
+    <string name="title_most_recent">Most Recent Videos</string>
+    <string name="text_no_data_found">No Data Found</string>
+    <string name="text_write_a_review">Write a review</string>
+    <string name="error_code_validation">Something went wrong!</string>
+    <string name="text_resend_code">Resend Code</string>
+    <string name="text_password_reset_msg">Pasword reset successfull!</string>
+    <string name="text_password_password_recovery_msg">Password Recovery</string>
+    <string name="text_remember_me">Remember Me</string>
+    <string name="text_agreement" translatable="false">Your agree to Videon\'s Privacy Policy</string>
+    <string name="authentication_fail_message_by_api">authorization not successful</string>
+    <string name="text_no_data_found_server" translatable="false">Didn\'t find any  data on server</string>
+    <string name="rate_this_video_dialog">You have rated this video</string>
+    <string name="email_send_message">We send a 4 digit code to your email address</string>
+    <string name="enter_code_hint" translatable="false">Enter Code</string>
+    <string name="proceed">Proceed</string>
+    <string name="welcome_text" translatable="false">Congratulations!\nYour account has been activated.</string>
+    <string name="welcome_text_reset_password" translatable="false">Congratulations!\nYour account has been reset.</string>
+    <string name="text_password_verification_msg" translatable="false">Email Verification</string>
+    <string name="sample_video_duration">02:45</string>
+    <string name="video_download_title" translatable="false">Video url name goes here.mp4</string>
+    <string name="language_change_notification">Language Chagnged!</string>
+    <string-array name="lang_array">
+        <item >ENGLISH</item>
+        <item >CHINESE</item>
+    </string-array>
+
+
+    <string name="select_videon">Select Video</string>
+    <string name="video_item_title">720p</string>
+    <string name="video_size_text">23mb</string>
+    <string name="enter_link">Enter your link to download</string>
+    <string name="download_dialog">Save</string>
+
+    <string name="channel_list_data_not_found" translatable="false">Data not found</string>
+    <string name="item_channel_movies" translatable="false">Movies</string>
+    <string name="activity_create_new_password" translatable="false">Create New Password</string>
+    <string name="base_button_submit_create_password" translatable="false">Submit</string>
+    <string name="edit_profile_button_update" translatable="false">Update</string>
+    <string name="base_button_login_empty_activity" translatable="false">Login</string>
+    <string name="button_see_all_home" translatable="false">See All</string>
+    <string name="button_see_all_featured" translatable="false">See All</string>
+    <string name="see_all_most_popular_new" translatable="false">See All</string>
+    <string name="see_all_most_recent" translatable="false">See All</string>
+    <string name="text_movies_item_live_tv" translatable="false">Movies</string>
+    <string name="login_sign_in_toolbar" translatable="false">Sign In</string>
+    <string name="privacy_policy_toolbar" translatable="false">Privacy policy</string>
+    <string name="toolbar_search_movies" translatable="false">Search Result</string>
+    <string name="item_search_4k_views" translatable="false">4k Views</string>
+    <string name="activity_data_not_found_see_all_new" translatable="false">Data not found</string>
+    <string name="item_4k_views_default_value" translatable="false">4k Views</string>
+    <string name="activity_sign_up_toolbar" translatable="false">Sign Up</string>
+    <string name="data_copy_message" translatable="false">Keyhash copied</string>
+    <string name="no_items" >Nothing to display</string>
+    <string name="input_dialog_title" >Warning!</string>
+    <string name="input_dialog_message" >Please enter the file name</string>
+    <string name="videoplayback" >VideoPlayBack</string>
+    <string name="live_text" >LIVE</string>
+    <!-- appid: ca-app-pub-9493916936835427~2724542596 -->
+    <!-- unit id: ca-app-pub-9493916936835427/5470835878 -->
+
+    <string name="password_can_not_empty">Password can\'t be empty</string>
+    <string name="space_not_allowed">Space not allowed</string>
+
+
+    <string name="input_dialog_box_download_write_filename_to_save">write filename to save</string>
+    <string name="input_dialog_download_save">Save</string>
+    <string name="input_download_cancel">Cancel</string>
+    <string name="sign_up_privacy_policy_text">You agree to Videon\'s privacy policy</string>
+    <string name="sign_up_link">link</string>
+    <string name="video_details_current_time_00_23">00:00</string>
+    <string name="video_details_text_time_1h_30m">1h 30m</string>
+    <string name="video_details_count_views_4k">4k</string>
+    <string name="video_details_upload_time_text_view">1 day ago</string>
+    <string name="bottom_sheet_search">Search</string>
+    <string name="dialog_rate_it_text_view">Rate it</string>
+    <string name="diaglog_review_submit">submit</string>
+    <string name="item_suggestion_videos_name">Game thrones</string>
+    <string name="home_menu_title">home</string>
+    <string name="my_profile_title_toolbar">My Profile</string>
+    <string name="menu_my_profile_edit_profile">Edit profile</string>
+
+
+    <string name="sign_up_accept_privacy_policy">You must accept the privacy policy</string>
+    <string name="white_space_not_allowed">White Space not allowed</string>
+    <string name="sign_up_invalid_email">Invalid email</string>
+    <string name="give_min_six_character">Please give minimum 6 characters</string>
+    <string name="name_cannot_be_empty">Name Can\'t be empty</string>
+    <string name="email_can_not_empty">Email Can\'t be empty</string>
+    <string name="confirm_can_not_empty">Confirm Password Can\'t be empty</string>
+    <string name="password_isnot_mattched">Password isn\'t matched</string>
+    <string name="video_details_already_rated_this_video">You have already rated this video</string>
+    <string name="video_details_video_downloading">Your video is downloading....</string>
+    <string name="video_details_marked_as_fav">You marked this video as favourite</string>
+    <string name="remove_from_fav">Your video already listed to favourite. Do you want to delete this?</string>
+    <string name="video_details_added_to_playlist">This video has been added in your playlist</string>
+
+   <!--rating dialog-->
+    <string name="rating_dialog_hated_it">Hated it</string>
+    <string name="rating_dialog_disliked_it">Disliked it</string>
+    <string name="rating_dialog_it_okay">It\'s ok</string>
+    <string name="rating_dialog_liked_it">Liked it</string>
+    <string name="rating_dialog_love_it">Love it</string>
+
+    <string name="see_all_invalid_link">Invalid link</string>
+    <string name="my_profile_fragment_favourite">Favourite</string>
+    <string name="my_profile_fragment_playlist">Playlist</string>
+    <string name="login_with_facebook_button_main">Login With Facebook</string>
+    <string name="facebook_sign_out">Sign Out</string>
+    <string name="edit_profile_did_not_update_any_things">You didn\'t update any things</string>
+    <string name="please_update_all_fields">Please update all fields</string>
+    <string name="edit_profile_update_failed">Profile update failed</string>
+    <string name="logout_success">Success!</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_confirm_login">Confirm</string>
+    <string name="dialog_yes_login">YES</string>
+    <string name="dialog_no_login">NO</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="have_any_account"><![CDATA[Don\'t have an account? <font color=#F95201><b>Sign Up</b></font>]]></string>
+    <string name="already_have_account_sign_up"><![CDATA[Already have an account? <font color=#F95201><b>Sign In</b></font>]]></string>
+    <string name="sign_up_agree_to_videon">You agree to Videon\'s</string>
+    <string name="sign_up_privacy_policy"><![CDATA[<font color=#F95201><u><b>Privacy Policy</b></u></font>]]></string>
+    <string name="title_channels">Channels</string>
+    <string name="details_suggested_tv">Suggested Tv</string>
+    <string name="privacy_policy_desc"><![CDATA[<h2>Privacy Policy</h2> <p> W3engineers  built the Videon app as an Open Source app. This SERVICE is provided by                     W3engineers  at no cost and is intended for use as is.                   </p> <p>This page is used to inform visitors regarding our policies with the collection, use, and disclosure                     of Personal Information if anyone decided to use our Service.                   </p> <p>If you choose to use our Service, then you agree to the collection and use of information in                     relation to this policy. The Personal Information that we collect is used for providing and improving                     the Service. We will not use or share your information with anyone except as described                     in this Privacy Policy.                   </p> <p>The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is                     accessible at Videon unless otherwise defined in this Privacy Policy.                   </p> <p><strong>Information Collection and Use</strong></p> <p>For a better experience, while using our Service, we may require you to provide us with certain                     personally identifiable information. The information that we request will be retained by us and used as described in this privacy policy.                   </p> <p>The app does use third party services that may collect information used to identify you.</p> <div><p>Link to privacy policy of third party service providers used by the app</p> <ul><li><a href=\"https://www.google.com/policies/privacy/\" target=\"_blank\">Google Play Services</a></li><!----><!----><!----><!----><!----><!----><!----><!----></ul></div> <p><strong>Log Data</strong></p> <p> We want to inform you that whenever you use our Service, in a case of                     an error in the app we collect data and information (through third party products) on your phone                     called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address,                     device name, operating system version, the configuration of the app when utilizing our Service,                     the time and date of your use of the Service, and other statistics.                   </p> <p><strong>Cookies</strong></p> <p>Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers.                     These are sent to your browser from the websites that you visit and are stored on your device\'s internal                     memory.                   </p> <p>This Service does not use these “cookies” explicitly. However, the app may use third party code and                     libraries that use “cookies” to collect information and improve their services. You have the option to                     either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose                     to refuse our cookies, you may not be able to use some portions of this Service.                   </p> <p><strong>Service Providers</strong></p> <p> We may employ third-party companies and individuals due to the following reasons:</p> <ul><li>To facilitate our Service;</li> <li>To provide the Service on our behalf;</li> <li>To perform Service-related services; or</li> <li>To assist us in analyzing how our Service is used.</li></ul> <p> We want to inform users of this Service that these third parties have access to                     your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However,                     they are obligated not to disclose or use the information for any other purpose.                   </p> <p><strong>Security</strong></p> <p> We value your trust in providing us your Personal Information, thus we are striving                     to use commercially acceptable means of protecting it. But remember that no method of transmission over                     the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee                     its absolute security.                   </p> <p><strong>Links to Other Sites</strong></p> <p>This Service may contain links to other sites. If you click on a third-party link, you will be directed                     to that site. Note that these external sites are not operated by us. Therefore, we strongly                     advise you to review the Privacy Policy of these websites. We have no control over                     and assume no responsibility for the content, privacy policies, or practices of any third-party sites                     or services.                   </p> <p><strong>Children’s Privacy</strong></p> <p>These Services do not address anyone under the age of 13. We do not knowingly collect                     personally identifiable information from children under 13. In the case we discover that a child                     under 13 has provided us with personal information, we immediately delete this from                     our servers. If you are a parent or guardian and you are aware that your child has provided us with personal                     information, please contact us so that we will be able to do necessary actions.                   </p> <p><strong>Changes to This Privacy Policy</strong></p> <p> We may update our Privacy Policy from time to time. Thus, you are advised to review                     this page periodically for any changes. We will notify you of any changes by posting                     the new Privacy Policy on this page. These changes are effective immediately after they are posted on                     this page.                   </p> <p><strong>Contact Us</strong></p> <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact                     us at w3engineer@gmail.com.                   </p>]]></string>
+
+</resources>
