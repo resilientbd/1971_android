@@ -107,6 +107,7 @@
         <activity android:name=".ui.welcome.WelcomeActivity" />
         <activity android:name=".ui.loadingerror.LoadingErrorActivity" />
         <activity android:name=".ui.downloadmanager.DownloadManagerActivity"></activity>
+        <activity android:name=".ui.videos.VideosActivity"></activity>
         <activity android:name=".ui.fullscreenactivity.FullScreeActivity" android:theme="@style/AppTheme.Fullscreen" android:screenOrientation="landscape"/>
     </application>
 

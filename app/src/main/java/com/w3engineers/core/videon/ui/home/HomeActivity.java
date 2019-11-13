@@ -76,6 +76,7 @@ import com.w3engineers.core.videon.ui.searchmovies.SearchMoviesActivity;
 import com.w3engineers.core.videon.ui.seeallvideos.SeeAllVideosActivity;
 import com.w3engineers.core.videon.ui.setting.SettingActivity;
 import com.w3engineers.core.videon.ui.videodetails.VideoDetailsActivity;
+import com.w3engineers.core.videon.ui.videos.VideosActivity;
 import com.w3engineers.ext.strom.application.ui.base.BaseActivity;
 import com.w3engineers.ext.strom.application.ui.base.ItemClickListener;
 import com.w3engineers.ext.strom.application.ui.widget.BaseRecyclerView;
@@ -176,6 +177,13 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
         addShadowInToolbar();
         delay();
         settingOfLanguage();
+
+        mBinding.videoText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                VideosActivity.runActivity(HomeActivity.this);
+            }
+        });
 
     }
 

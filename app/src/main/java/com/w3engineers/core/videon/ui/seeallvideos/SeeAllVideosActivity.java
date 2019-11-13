@@ -110,6 +110,7 @@ public class SeeAllVideosActivity extends BaseActivity implements UICommunicator
 
         checkInternetConnection();
         KeyboardUtils.hideSoftInput(this);
+        retrieveAllCategories(0);
 
     }
 
@@ -324,7 +325,16 @@ public class SeeAllVideosActivity extends BaseActivity implements UICommunicator
         recyclerView.setVisibility(View.VISIBLE);
     }
 
+    //retrieve all categories
+    public void retrieveAllCategories(int categorytype)
+    {
+        if (!new CheckNetworkAvailabilityAndPermission().checkIfHasNetwork(this)) {
+            mBinding.progressBarCircular.setVisibility(View.GONE);
+            return;
+        }
 
+
+    }
     /**
      * retrieve all videos from server
      *
