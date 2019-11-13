@@ -58,6 +58,7 @@
     <color name="document_color">#102689</color>
     <color name="photo_color">#F9B154</color>
     <color name="video_color">#FE7F52</color>
+    <color name="tab_default_color">#4B4C68</color>
 
 
 </resources>

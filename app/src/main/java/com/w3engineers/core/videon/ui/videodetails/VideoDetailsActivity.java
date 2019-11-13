@@ -204,6 +204,7 @@ public class VideoDetailsActivity extends BaseActivity implements ItemClickListe
         mBinding.youtubeSeekbar.setOnSeekBarChangeListener(mVideoSeekBarChangeListener);
         mHandler = new Handler();
         layout = mBinding.buttonLayout;
+        SharedPref.init(this);
         //check login
         userid = SharedPref.read(PrefType.USER_REGID);
         mRemoteVideoApiInterface = RemoteApiProvider.getInstance().getRemoteHomeVideoApi();

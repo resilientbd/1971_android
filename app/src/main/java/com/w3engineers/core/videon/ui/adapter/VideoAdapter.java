@@ -12,11 +12,13 @@ import android.widget.ProgressBar;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.FitCenter;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
+import com.w3engineers.core.util.DurationConverter;
 import com.w3engineers.core.util.NetworkURL;
 import com.w3engineers.core.util.adapterUtil.ProjectBaseAdapter;
 import com.w3engineers.core.util.helper.ResoulationConverter;
@@ -59,7 +61,7 @@ public class VideoAdapter extends ProjectBaseAdapter<Datum> {
             ViewGroup.LayoutParams params=mBinding.roundImageViewLiveTv.getLayoutParams();
             Integer[] reqHeight= ResoulationConverter.ConvertResoulationWidth(mContext,item.getImageResolution(),(float)params.width);
             LoadImage(mBinding.roundImageViewLiveTv,mBinding.progressBarCircular,imageUrl,reqHeight);
-
+            mBinding.durationtext.setText(DurationConverter.GetDurationString(Integer.parseInt(item.getDuration())));
         }
     }
 
@@ -75,7 +77,7 @@ public class VideoAdapter extends ProjectBaseAdapter<Datum> {
         try {
             RequestOptions requestOptions = new RequestOptions();
 
-            requestOptions = requestOptions.transforms(new FitCenter(), new RoundedCorners(5)).override(heightWidth[0], heightWidth[1]).error(R.drawable.default_img)
+            requestOptions = requestOptions.transforms(new CenterCrop(), new RoundedCorners(16)).error(R.drawable.default_img)
                     .placeholder(R.drawable.default_category_img); // resizes the image to these dimensions (in pixel)
 
             Glide.with(mContext)

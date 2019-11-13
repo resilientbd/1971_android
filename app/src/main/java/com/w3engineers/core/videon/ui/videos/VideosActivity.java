@@ -2,7 +2,10 @@ package com.w3engineers.core.videon.ui.videos;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TabItem;
+import android.support.design.widget.TabLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -11,6 +14,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.facebook.login.LoginManager;
@@ -19,6 +24,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.w3engineers.core.util.CheckVideoTypeUtil;
 import com.w3engineers.core.util.helper.AppConstants;
 import com.w3engineers.core.util.helper.MySessionManager;
 import com.w3engineers.core.util.helper.PrefType;
@@ -37,6 +43,7 @@ import com.w3engineers.core.videon.ui.login.LoginActivity;
 import com.w3engineers.core.videon.ui.myprofile.MyProfileActivity;
 import com.w3engineers.core.videon.ui.searchmovies.SearchMoviesActivity;
 import com.w3engineers.core.videon.ui.setting.SettingActivity;
+import com.w3engineers.core.videon.ui.videodetails.VideoDetailsActivity;
 import com.w3engineers.ext.strom.application.ui.base.BaseActivity;
 import com.w3engineers.ext.strom.application.ui.base.ItemClickListener;
 import com.w3engineers.ext.strom.util.helper.Toaster;
@@ -63,7 +70,13 @@ public class VideosActivity extends BaseActivity {
         runCurrentActivity(context, intent);
     }
 
+    private void initTabs(List<Datum> tabs)
+    {
+        for(Datum datum:tabs){
+            mBinding.categoryTabLayout.addTab(mBinding.categoryTabLayout.newTab().setText(datum.getTitle()));
+        }
 
+    }
     @Override
     protected int getLayoutId() {
         return R.layout.activity_videos;
@@ -76,27 +89,39 @@ public class VideosActivity extends BaseActivity {
         adapter=new CategoryTabsAdapter(this);
         videoadapter=new VideoAdapter(this);
 
+
+        mBinding.categoryTabLayout.setSelectedTabIndicatorColor(Color.TRANSPARENT);
+        mBinding.categoryTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+               getVideosByCategory(mModelList.get(tab.getPosition()).getId());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        setClickListener(mBinding.imageView2);
         initRecyclerView();
         getVideoCategories();
     }
     private void initRecyclerView(){
 
-        mBinding.categoryTabsRecycleview.setAdapter(adapter);
-        mBinding.categoryTabsRecycleview.setLayoutManager(   new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,
-                false));
-        adapter.setItemClickListener(new ItemClickListener<Datum>() {
-            @Override
-            public void onItemClick(View view, Datum item) {
-                getVideosByCategory(item.getId());
-            }
-        });
+
 
         mBinding.videosRecyclerview.setAdapter(videoadapter);
         mBinding.videosRecyclerview.setLayoutManager(new LinearLayoutManager(this));
         videoadapter.setItemClickListener(new ItemClickListener<Datum>() {
             @Override
             public void onItemClick(View view, Datum item) {
-
+                CheckVideoTypeUtil.checkVideoType(item);
+                VideoDetailsActivity.runActivity(VideosActivity.this,item);
             }
         });
     }
@@ -112,7 +137,8 @@ public class VideosActivity extends BaseActivity {
                     //adapter.addItem
                     Log.d("datacheck","data:"+apiCommonDetailListResponse.toString());
                     mModelList=apiCommonDetailListResponse.getData();
-                    adapter.addItems(mModelList);
+
+                    initTabs(mModelList);
                     getVideosByCategory(mModelList.get(0).getId());
 
 
@@ -141,7 +167,10 @@ public class VideosActivity extends BaseActivity {
                 {
                     List<Datum> videoData=response.body().getData();
                     videoadapter.clear();
-                    videoadapter.addItems(videoData);
+                    if(videoData!=null)
+                    {
+                        videoadapter.addItems(videoData);
+                    }
                     Log.d("datacheck","error:"+response.body());
                 }
                 else {
@@ -156,4 +185,12 @@ public class VideosActivity extends BaseActivity {
         });
     }
 
+    @Override
+    public void onClick(View view) {
+        super.onClick(view);
+        if(view.getId()==mBinding.imageView2.getId())
+        {
+            finish();
+        }
+    }
 }

@@ -17,45 +17,44 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="42dp"
+
             android:src="@drawable/ic_back"
+            android:elevation="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
             ads:layout_constraintStart_toStartOf="parent"
             ads:layout_constraintTop_toTopOf="parent" />
 
-        <SearchView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
 
-            ads:layout_constraintBottom_toBottomOf="@+id/imageView2"
-            ads:layout_constraintEnd_toEndOf="parent"
-            ads:layout_constraintTop_toTopOf="@+id/imageView2" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="32dp"
             android:text="Videos"
             android:textColor="@color/white"
             android:textSize="22dp"
-            ads:layout_constraintStart_toStartOf="parent"
-            ads:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            ads:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            android:layout_marginLeft="20dp"
+            ads:layout_constraintStart_toEndOf="@+id/imageView2"
+            ads:layout_constraintTop_toTopOf="@+id/imageView2" />
 
-        <com.w3engineers.ext.strom.application.ui.widget.BaseRecyclerView
-            android:id="@+id/category_tabs_recycleview"
+        <android.support.design.widget.TabLayout
+            android:id="@+id/category_tab_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
             ads:brv_emptyLayoutId="@id/emptyLayoutId"
             ads:layout_constraintLeft_toLeftOf="parent"
             ads:layout_constraintRight_toRightOf="parent"
-            ads:layout_constraintTop_toBottomOf="@id/textView3"
-            android:layout_marginTop="20dp"
-            android:layout_width="0dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_height="50dp">
+            ads:layout_constraintTop_toBottomOf="@+id/title"
+            ads:tabMode="scrollable"
+            ads:tabSelectedTextColor="@color/white"
+            ads:tabTextColor="@color/tab_default_color"></android.support.design.widget.TabLayout>
 
-        </com.w3engineers.ext.strom.application.ui.widget.BaseRecyclerView>
         <com.w3engineers.ext.strom.application.ui.widget.BaseRecyclerView
 
             android:layout_width="0dp"
@@ -69,9 +68,12 @@
             ads:brv_emptyLayoutId="@id/emptyLayoutId"
             ads:layout_constraintLeft_toLeftOf="parent"
             ads:layout_constraintRight_toRightOf="parent"
-            ads:layout_constraintTop_toBottomOf="@id/category_tabs_recycleview"
+            ads:layout_constraintTop_toBottomOf="@id/category_tab_layout"
+
             ads:layout_constraintBottom_toBottomOf="parent"
             />
+
+
         <TextView
             android:id="@+id/emptyLayoutId"
             android:layout_width="wrap_content"
