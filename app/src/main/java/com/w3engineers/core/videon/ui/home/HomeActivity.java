@@ -140,6 +140,13 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
     protected void startUI() {
 
         mBinding = (ActivityHomeBinding) getViewDataBinding();
+        mBinding.videosection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                VideosActivity.runActivity(HomeActivity.this);
+                Log.d("datacheck","clicked");
+            }
+        });
         enableProgressLayer();
         FirebaseMessaging.getInstance().subscribeToTopic("message");
         mRemoteVideoApiInterface = RemoteApiProvider.getInstance().getRemoteHomeVideoApi();
@@ -178,12 +185,7 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
         delay();
         settingOfLanguage();
 
-        mBinding.videoText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                VideosActivity.runActivity(HomeActivity.this);
-            }
-        });
+
 
     }
 

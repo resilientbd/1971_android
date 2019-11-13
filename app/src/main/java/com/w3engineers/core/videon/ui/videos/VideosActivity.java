@@ -32,6 +32,7 @@ import com.w3engineers.core.videon.data.remote.home.RemoteVideoApiInterface;
 import com.w3engineers.core.videon.databinding.ActivityEmptyBinding;
 import com.w3engineers.core.videon.databinding.ActivityVideosBinding;
 import com.w3engineers.core.videon.ui.adapter.CategoryTabsAdapter;
+import com.w3engineers.core.videon.ui.adapter.VideoAdapter;
 import com.w3engineers.core.videon.ui.login.LoginActivity;
 import com.w3engineers.core.videon.ui.myprofile.MyProfileActivity;
 import com.w3engineers.core.videon.ui.searchmovies.SearchMoviesActivity;
@@ -56,6 +57,7 @@ public class VideosActivity extends BaseActivity {
 
     private RemoteVideoApiInterface mRemoteVideoApiInterface;
     private CategoryTabsAdapter adapter;
+    private VideoAdapter videoadapter;
     public static void runActivity(Context context) {
         Intent intent = new Intent(context, VideosActivity.class);
         runCurrentActivity(context, intent);
@@ -72,6 +74,8 @@ public class VideosActivity extends BaseActivity {
          mBinding=(ActivityVideosBinding)getViewDataBinding();
         mRemoteVideoApiInterface= RemoteApiProvider.getInstance().getRemoteHomeVideoApi();
         adapter=new CategoryTabsAdapter(this);
+        videoadapter=new VideoAdapter(this);
+
         initRecyclerView();
         getVideoCategories();
     }
@@ -81,6 +85,15 @@ public class VideosActivity extends BaseActivity {
         mBinding.categoryTabsRecycleview.setLayoutManager(   new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,
                 false));
         adapter.setItemClickListener(new ItemClickListener<Datum>() {
+            @Override
+            public void onItemClick(View view, Datum item) {
+                getVideosByCategory(item.getId());
+            }
+        });
+
+        mBinding.videosRecyclerview.setAdapter(videoadapter);
+        mBinding.videosRecyclerview.setLayoutManager(new LinearLayoutManager(this));
+        videoadapter.setItemClickListener(new ItemClickListener<Datum>() {
             @Override
             public void onItemClick(View view, Datum item) {
 
@@ -100,6 +113,9 @@ public class VideosActivity extends BaseActivity {
                     Log.d("datacheck","data:"+apiCommonDetailListResponse.toString());
                     mModelList=apiCommonDetailListResponse.getData();
                     adapter.addItems(mModelList);
+                    getVideosByCategory(mModelList.get(0).getId());
+
+
                 }
                 else {
                     Log.d("datacheck","error:"+response.code());
@@ -109,7 +125,33 @@ public class VideosActivity extends BaseActivity {
 
             @Override
             public void onFailure(Call<ApiCommonDetailListResponse> call, Throwable t) {
+                Log.d("datacheck","failure:"+t.getMessage());
 
+            }
+        });
+    }
+
+    private void getVideosByCategory(String cat_id)
+    {
+        mRemoteVideoApiInterface.getVideosByCategory(getResources().getString(R.string.api_token_value),cat_id,"0").enqueue(new Callback<ApiCommonDetailListResponse>() {
+            @Override
+            public void onResponse(Call<ApiCommonDetailListResponse> call, Response<ApiCommonDetailListResponse> response) {
+
+                if(response.isSuccessful())
+                {
+                    List<Datum> videoData=response.body().getData();
+                    videoadapter.clear();
+                    videoadapter.addItems(videoData);
+                    Log.d("datacheck","error:"+response.body());
+                }
+                else {
+                    Log.d("datacheck","error:"+response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ApiCommonDetailListResponse> call, Throwable t) {
+                Log.d("datacheck","error:"+t.getMessage());
             }
         });
     }

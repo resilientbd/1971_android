@@ -61,6 +61,15 @@ public interface RemoteVideoApiInterface {
     @POST("public/api/category/all.php")
     Call<ApiCommonDetailListResponse> getCategoryVideos(@Field("api_token") String api_token, @Field("page") String pageNo);
 
+
+    /**
+     * Request to server for the category list
+     * */
+    @FormUrlEncoded
+    @POST("public/api/video/by-category.php")
+    Call<ApiCommonDetailListResponse> getVideosByCategory(@Field("api_token") String api_token, @Field("category") String categoryId, @Field("page") String pageNo);
+
+
     /**
      * Request to server for the category list
      * */
