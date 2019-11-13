@@ -76,8 +76,9 @@
                         android:layout_marginRight="@dimen/margin_16"
                         android:layout_marginTop="32dp"
                         android:background="@drawable/drawable_search_edit_text_state"
-                        android:textSize="18sp"
-                        android:drawableLeft="@drawable/ic_search"
+                        android:textSize="20sp"
+                        android:paddingRight="16dp"
+                        android:drawableRight="@drawable/ic_search"
                         android:drawablePadding="@dimen/padding_12"
                         android:hint="@string/text_home_search"
                         android:imeOptions="actionDone"
@@ -139,7 +140,7 @@
                                         android:layout_marginBottom="12dp"
                                         android:text="Document"
                                         android:textColor="@color/white"
-
+                                        android:textSize="20sp"
                                         ads:layout_constraintBottom_toBottomOf="parent"
                                         ads:layout_constraintLeft_toLeftOf="parent" />
                                     <ImageView
@@ -173,7 +174,7 @@
                                         android:layout_marginBottom="12dp"
                                         android:text="Photos"
                                         android:textColor="@color/white"
-
+                                        android:textSize="20sp"
                                         ads:layout_constraintBottom_toBottomOf="parent"
                                         ads:layout_constraintLeft_toLeftOf="parent" />
                                     <ImageView
@@ -218,7 +219,7 @@
                                     android:layout_marginBottom="12dp"
                                     android:text="Videos"
                                     android:textColor="@color/white"
-
+                                    android:textSize="20sp"
                                     ads:layout_constraintBottom_toBottomOf="parent"
                                     ads:layout_constraintLeft_toLeftOf="parent" />
                                     <ImageView
@@ -253,7 +254,7 @@
                                     android:layout_marginBottom="12dp"
                                     android:text="Audio"
                                     android:textColor="@color/white"
-
+                                    android:textSize="20sp"
                                     ads:layout_constraintBottom_toBottomOf="parent"
                                     ads:layout_constraintLeft_toLeftOf="parent" />
 
