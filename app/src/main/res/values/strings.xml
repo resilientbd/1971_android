@@ -1,6 +1,6 @@
 <resources>
     <!--app level values-->
-    <string name="app_name">Videon</string>
+    <string name="app_name">1971</string>
 
     <string name="file_provider_authority">io.left.core.videon.fileprovider</string>
     <string name="file_name_profile_image" translatable="false">profile_image</string>
