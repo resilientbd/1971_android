@@ -40,7 +40,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:adjustViewBounds="true"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
 
                 android:src="@drawable/default_img"
                 app:layout_constraintBottom_toBottomOf="@+id/constraint_title_section"
@@ -49,64 +49,61 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/constraint_title_section"
                 app:riv_corner_radius="8dp" />
+
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/constraint_title_section"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_8"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_weight="3"
-                app:layout_constraintStart_toEndOf="@+id/round_image_view_video"
-                android:layout_marginStart="@dimen/margin_8">
+                app:layout_constraintStart_toEndOf="@+id/round_image_view_video">
 
                 <TextView
                     android:id="@+id/text_view_video_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginEnd="@dimen/margin_16"
-                    android:layout_marginRight="@dimen/margin_16"
-                    android:paddingEnd="@dimen/padding_5"
-                    android:fontFamily="@font/helveticabold"
-                    android:text="@string/search_video_title"
+                    android:layout_marginStart="16dp"
                     android:ellipsize="end"
-                    android:textSize="@dimen/text_body"
+                    android:fontFamily="@font/helveticabold"
                     android:maxLines="2"
-                    android:textColor="@color/white"
+                    android:paddingEnd="@dimen/padding_5"
+                    android:paddingRight="@dimen/padding_5"
+                    android:text="@string/search_video_title"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_body"
+                    app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:paddingRight="@dimen/padding_5" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/text_view_sub"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginEnd="@dimen/margin_16"
-                    android:layout_marginRight="@dimen/margin_16"
-                    android:paddingEnd="@dimen/padding_5"
-                    android:fontFamily="@font/helveticabold"
-                    android:text="@string/search_video_title"
-                    android:ellipsize="end"
-                    android:textSize="@dimen/text_body"
-                    android:maxLines="2"
-
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/helveticabold"
+                    android:maxLines="2"
+                    android:paddingEnd="@dimen/padding_5"
                     android:textColor="@color/white"
+                    android:paddingRight="@dimen/padding_5"
+
+                    android:text="@string/search_video_title"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textSize="@dimen/text_body"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_view_video_title"
-                    android:paddingRight="@dimen/padding_5" />
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_video_title" />
 
 
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/constraint_layout_category_view_count_section"
                     android:layout_width="0dp"
-                    android:visibility="gone"
                     android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginTop="@dimen/margin_16"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toStartOf="@+id/constraint_layout_video_duration_upload_time_section"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/text_view_video_title">
 
                     <ImageView
@@ -152,11 +149,11 @@
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/constraint_layout_video_duration_upload_time_section"
                     android:layout_width="0dp"
-                    android:visibility="gone"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/constraint_layout_category_view_count_section"
-                    app:layout_constraintStart_toEndOf="@+id/constraint_layout_category_view_count_section">
+                    app:layout_constraintStart_toEndOf="@+id/constraint_layout_category_view_count_section"
+                    app:layout_constraintTop_toTopOf="@+id/constraint_layout_category_view_count_section">
 
                     <ImageView
                         android:id="@+id/image_view_duration"
@@ -181,9 +178,9 @@
                         android:id="@+id/image_view_calendar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_calender"
                         android:layout_marginTop="@dimen/margin_5"
-                        app:layout_constraintTop_toBottomOf="@+id/image_view_duration"/>
+                        android:src="@drawable/ic_calender"
+                        app:layout_constraintTop_toBottomOf="@+id/image_view_duration" />
 
                     <TextView
                         android:id="@+id/text_view_upload_time"

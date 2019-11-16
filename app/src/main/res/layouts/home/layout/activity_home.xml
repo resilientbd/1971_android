@@ -21,7 +21,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:navigationIcon="@drawable/logo"
+
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:title="@string/text_home_title"
 
