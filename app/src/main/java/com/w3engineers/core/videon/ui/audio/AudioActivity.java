@@ -21,6 +21,7 @@ import com.w3engineers.core.videon.databinding.ActivityVideosBinding;
 import com.w3engineers.core.videon.ui.adapter.AudioAdapter;
 import com.w3engineers.core.videon.ui.adapter.CategoryTabsAdapter;
 import com.w3engineers.core.videon.ui.adapter.VideoAdapter;
+import com.w3engineers.core.videon.ui.audiodetails.AudioDetailsActivity;
 import com.w3engineers.core.videon.ui.videodetails.VideoDetailsActivity;
 import com.w3engineers.ext.strom.application.ui.base.BaseActivity;
 import com.w3engineers.ext.strom.application.ui.base.ItemClickListener;
@@ -66,7 +67,12 @@ public class AudioActivity extends BaseActivity {
         adapter=new CategoryTabsAdapter(this);
         videoadapter=new AudioAdapter(this);
 
-
+        videoadapter.setItemClickListener(new ItemClickListener<Datum>() {
+            @Override
+            public void onItemClick(View view, Datum item) {
+                AudioDetailsActivity.runActivity(AudioActivity.this);
+            }
+        });
         mBinding.categoryTabLayout.setSelectedTabIndicatorColor(Color.TRANSPARENT);
         mBinding.categoryTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
