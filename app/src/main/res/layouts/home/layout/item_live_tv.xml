@@ -5,19 +5,21 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraint_layout_live_tv"
-        android:layout_width="@dimen/width_100"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+
         android:elevation="@dimen/elevation_20"
         android:layout_marginEnd="@dimen/margin_8"
         android:layout_marginRight="@dimen/margin_8">
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/round_image_view_live_tv"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_height="101dp"
             android:adjustViewBounds="true"
             android:elevation="@dimen/elevation_20"
+            android:scaleType="fitXY"
             android:src="@drawable/default_category_img"
             app:riv_corner_radius="2dp"
             tools:ignore="MissingConstraints" />
@@ -33,7 +35,7 @@
             android:maxLines="1"
             android:singleLine="true"
             android:text="@string/text_movies_item_live_tv"
-            android:textColor="@color/color_home_category_title"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_body"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +51,7 @@
             android:maxLines="1"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:textColor="@color/color_home_small_text"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_small_body"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

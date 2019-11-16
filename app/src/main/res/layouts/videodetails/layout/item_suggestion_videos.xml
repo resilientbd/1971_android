@@ -29,7 +29,7 @@
             android:maxLines="1"
             android:layout_marginTop="@dimen/margin_16"
             android:text="@string/item_suggestion_videos_name"
-            android:textColor="@color/color_home_category_title"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_body"
             app:layout_constraintEnd_toEndOf="@+id/square_image_view_suggestion"
             app:layout_constraintStart_toStartOf="parent"

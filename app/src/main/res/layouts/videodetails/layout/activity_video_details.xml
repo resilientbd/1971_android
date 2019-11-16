@@ -65,12 +65,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_450"
                 android:layout_weight="1"
-                android:background="@color/black"
+                android:background="@android:color/black"
                 android:orientation="vertical">
 
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/content_panel"
-                    android:background="@color/black"
+                    android:background="@drawable/background_black"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -88,7 +88,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:elevation="@dimen/elevation_10"
-                            android:background="@android:color/black"
+
                             android:visibility="visible">
 
                             <ProgressBar
@@ -106,21 +106,18 @@
                                 android:layout_width="0dp"
                                 android:layout_height="@dimen/height_80"
 
-                                android:background="@color/transparent_black"
+
                                 android:elevation="60dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintLeft_toLeftOf="parent"
-                                app:layout_constraintRight_toRightOf="parent">
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageButton
                                     android:id="@+id/backword"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:layout_marginLeft="8dp"
-                                    android:layout_marginEnd="8dp"
 
-                                    android:layout_marginRight="8dp"
                                     android:background="@android:color/transparent"
 
                                     android:padding="8dp"
@@ -128,24 +125,21 @@
                                     android:src="@drawable/ic_backward"
                                     app:layout_constraintBottom_toBottomOf="@+id/play_pause"
                                     app:layout_constraintEnd_toStartOf="@+id/play_pause"
-                                    app:layout_constraintStart_toEndOf="@+id/text_currentTime"
+
+                                    app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="@+id/play_pause" />
 
                                 <ImageButton
                                     android:id="@+id/forward"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:layout_marginLeft="8dp"
-                                    android:layout_marginEnd="8dp"
-
-                                    android:layout_marginRight="8dp"
 
                                     android:background="@android:color/transparent"
                                     android:padding="8dp"
                                     android:src="@drawable/ic_fast_forward"
                                     app:layout_constraintBottom_toBottomOf="@+id/backword"
-                                    app:layout_constraintEnd_toStartOf="@+id/max_min"
+
+                                    app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toEndOf="@+id/play_pause"
                                     app:layout_constraintTop_toTopOf="@+id/backword" />
 
@@ -153,65 +147,67 @@
                                     android:id="@+id/play_pause"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:layout_marginLeft="8dp"
                                     android:layout_marginTop="@dimen/margin_8"
                                     android:layout_marginEnd="8dp"
-                                    android:layout_marginRight="8dp"
                                     android:background="@android:color/transparent"
                                     android:src="@drawable/ic_pause"
-
-                                    app:layout_constraintEnd_toStartOf="@+id/max_min"
-                                    app:layout_constraintStart_toEndOf="@+id/text_currentTime"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
-                                <ImageButton
-                                    android:id="@+id/max_min"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="8dp"
-                                    android:layout_marginRight="8dp"
-                                    android:background="@android:color/transparent"
 
-                                    android:padding="8dp"
-                                    android:src="@drawable/ic_expand"
-                                    app:layout_constraintBottom_toBottomOf="@+id/play_pause"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="@+id/play_pause" />
+                            </android.support.constraint.ConstraintLayout>
+
+                            <ImageButton
+                                android:id="@+id/max_min"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginBottom="20dp"
+                                android:background="@android:color/transparent"
+                                android:padding="8dp"
+                                android:src="@drawable/ic_expand"
+                                app:layout_constraintBottom_toBottomOf="parent"
+
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintRight_toRightOf="parent" />
+
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/constraintLayout2"
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+
+                                app:layout_constraintStart_toStartOf="parent">
 
                                 <SeekBar
                                     android:id="@+id/youtubeSeekbar"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:layout_marginLeft="8dp"
-                                    android:layout_marginEnd="8dp"
-                                    android:layout_marginRight="8dp"
+                                    android:layout_marginStart="14dp"
+                                    android:layout_marginEnd="16dp"
 
-
-                                    android:progressBackgroundTint="@color/accent"
+                                    android:progressBackgroundTint="@color/white"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toEndOf="@+id/text_currentTime"
-                                    app:layout_constraintTop_toBottomOf="@+id/play_pause" />
+                                    app:layout_constraintStart_toStartOf="parent" />
 
                                 <TextView
                                     android:id="@+id/text_currentTime"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginStart="20dp"
 
 
+                                    android:layout_marginBottom="24dp"
                                     android:text="@string/video_details_current_time_00_23"
                                     android:textColor="@android:color/white"
-                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="@id/youtubeSeekbar"
                                     app:layout_constraintLeft_toLeftOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/play_pause" />
+                                    app:layout_constraintStart_toStartOf="parent" />
                             </android.support.constraint.ConstraintLayout>
-
-
                         </android.support.constraint.ConstraintLayout>
                     </android.support.design.widget.AppBarLayout>
 
@@ -301,9 +297,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_16"
+                            android:layout_marginRight="16dp"
+                            android:visibility="visible"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
+                            <ImageView
+                                android:id="@+id/share_op"
+                                style="@style/Base.Widget.AppCompat.RatingBar.Small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/margin_5"
+                                android:src="@drawable/ic_share"
 
+                                app:layout_constraintEnd_toStartOf="@+id/text_view_rating_number"
+                                app:layout_constraintTop_toTopOf="parent" />
                             <RatingBar
                                 android:id="@+id/rating_bar"
                                 style="@style/Base.Widget.AppCompat.RatingBar.Small"
@@ -313,6 +320,7 @@
                                 android:isIndicator="true"
                                 android:numStars="1"
                                 android:rating="4.6"
+                                android:visibility="gone"
                                 app:layout_constraintEnd_toStartOf="@+id/text_view_rating_number"
                                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -324,6 +332,7 @@
                                 android:layout_marginRight="@dimen/margin_16"
                                 android:text="@string/details_rating_4_6"
                                 android:textSize="@dimen/text_body"
+                                android:visibility="gone"
                                 app:layout_constraintBottom_toBottomOf="@+id/rating_bar"
                                 app:layout_constraintEnd_toEndOf="parent"
 
@@ -341,7 +350,7 @@
                             android:layout_marginTop="@dimen/margin_16"
                             android:layout_marginEnd="@dimen/margin_16"
                             android:layout_marginRight="@dimen/margin_16"
-                            android:background="@color/color_home_separator_line"
+                            android:background="@android:color/transparent"
                             app:layout_constraintTop_toBottomOf="@+id/text_view_video_title" />
 
                         <android.support.constraint.ConstraintLayout
@@ -350,6 +359,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/margin_15"
                             android:layout_marginLeft="@dimen/margin_15"
+                            android:visibility="gone"
                             android:layout_marginTop="@dimen/margin_8"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -457,7 +467,7 @@
                             android:layout_marginTop="@dimen/margin_8"
                             android:layout_marginEnd="@dimen/margin_16"
                             android:layout_marginRight="@dimen/margin_16"
-                            android:background="@color/color_home_separator_line"
+                            android:background="@android:color/transparent"
                             app:layout_constraintTop_toBottomOf="@+id/constraint_layout_time_views_series_section" />
 
                         <ProgressBar
@@ -491,7 +501,7 @@
                             android:layout_marginTop="@dimen/margin_16"
                             android:layout_marginEnd="@dimen/margin_16"
                             android:layout_marginRight="@dimen/margin_16"
-                            android:background="@color/color_home_separator_line"
+                            android:background="@android:color/transparent"
                             app:layout_constraintTop_toBottomOf="@+id/text_view_description" />
 
                         <android.support.constraint.ConstraintLayout
@@ -500,6 +510,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/margin_16"
                             android:layout_marginTop="@dimen/margin_16"
+                            android:visibility="gone"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/view_separator3">
 
@@ -589,7 +600,7 @@
                             android:layout_marginTop="@dimen/margin_16"
                             android:layout_marginEnd="@dimen/margin_16"
                             android:layout_marginRight="@dimen/margin_16"
-                            android:background="@color/color_home_separator_line"
+                            android:background="@android:color/transparent"
                             app:layout_constraintTop_toBottomOf="@+id/constraint_layout_share_playlist_fav_rate_section" />
 
                         <TextView

@@ -139,7 +139,7 @@ public class CommonDataAdapter extends ProjectBaseAdapter<Datum> {
             try {
                 RequestOptions requestOptions = new RequestOptions();
 
-                requestOptions = requestOptions.transforms(new FitCenter(), new RoundedCorners(5)).override(heightWidth[0], heightWidth[1]).error(R.drawable.default_img)
+                requestOptions = requestOptions.transforms(new FitCenter(), new RoundedCorners(12)).error(R.drawable.default_img)
                         .placeholder(R.drawable.default_img); // resizes the image to these dimensions (in pixel)
 
                 Glide.with(mContext)
@@ -169,7 +169,7 @@ public class CommonDataAdapter extends ProjectBaseAdapter<Datum> {
         try {
             RequestOptions requestOptions = new RequestOptions();
 
-            requestOptions = requestOptions.transforms(new FitCenter(), new RoundedCorners(5)).override(heightWidth[0], heightWidth[1]).error(R.drawable.default_category_img)
+            requestOptions = requestOptions.transforms(new RoundedCorners(5)).error(R.drawable.default_category_img)
                     .placeholder(R.drawable.default_category_img); // resizes the image to these dimensions (in pixel)
 
             Glide.with(mContext)
