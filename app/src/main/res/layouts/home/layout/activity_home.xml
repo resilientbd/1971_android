@@ -136,6 +136,7 @@
                             ads:layout_constraintTop_toBottomOf="@+id/main_categories_layer1">
 
                             <android.support.v7.widget.CardView
+                                android:id="@+id/documentsection"
                                 android:layout_width="match_parent"
                                 android:layout_height="100dp"
                                 android:layout_marginRight="8dp"
@@ -255,6 +256,7 @@
                             </android.support.v7.widget.CardView>
 
                             <android.support.v7.widget.CardView
+                                android:id="@+id/audiosection"
                                 android:layout_width="match_parent"
                                 android:layout_height="100dp"
                                 android:layout_marginLeft="8dp"

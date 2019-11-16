@@ -1,5 +1,7 @@
 package com.w3engineers.core.videon.data.remote.home;
 
+import android.provider.MediaStore;
+
 import com.w3engineers.core.videon.data.local.apimodels.AdResponse;
 import com.w3engineers.core.videon.data.local.authentication.AuthenticationModel;
 import com.w3engineers.core.videon.data.local.commondatalistresponse.ApiCommonDetailListResponse;
@@ -254,5 +256,18 @@ public interface RemoteVideoApiInterface {
     @FormUrlEncoded
     @POST("public/api/image/by-category.php")
     Call<ImageModel> getImagesByCategory(@Field("api_token") String api_token,@Field("cat_id") String cat_id,@Field("page") String page);
+    /**
+     * Get All audio categories
+     */
+    @FormUrlEncoded
+    @POST("public/api/category/audio-category.php")
+    Call<ImageCategories> getAllAudioCategories(@Field("api_token") String api_token, @Field("page") String page);
+
+    /**
+     * request for audio by category
+     */
+    @FormUrlEncoded
+    @POST("public/api/audio/by-category.php")
+    Call<MediaStore.Audio> getAudioByCategory(@Field("api_token") String api_token, @Field("cat_id") String cat_id, @Field("page") String page);
 
 }

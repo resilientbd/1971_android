@@ -109,6 +109,8 @@
         <activity android:name=".ui.downloadmanager.DownloadManagerActivity"></activity>
         <activity android:name=".ui.videos.VideosActivity"></activity>
         <activity android:name=".ui.images.ImageActivity"></activity>
+        <activity android:name=".ui.audio.AudioActivity"/>
+        <activity android:name=".ui.document.DocumentActivity"/>
         <activity android:name=".ui.fullscreenactivity.FullScreeActivity" android:theme="@style/AppTheme.Fullscreen" android:screenOrientation="landscape"/>
     </application>
 

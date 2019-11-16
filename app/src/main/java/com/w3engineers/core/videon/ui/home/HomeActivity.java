@@ -67,7 +67,9 @@ import com.w3engineers.core.videon.data.remote.home.RemoteVideoApiInterface;
 import com.w3engineers.core.videon.databinding.ActivityHomeBinding;
 import com.w3engineers.core.videon.ui.adapter.CommonDataAdapter;
 import com.w3engineers.core.videon.ui.adapter.HomeCategoryAdapter;
+import com.w3engineers.core.videon.ui.audio.AudioActivity;
 import com.w3engineers.core.videon.ui.channellist.ChannelListActivity;
+import com.w3engineers.core.videon.ui.document.DocumentActivity;
 import com.w3engineers.core.videon.ui.downloadmanager.DownloadManagerActivity;
 import com.w3engineers.core.videon.ui.empty.EmptyActivity;
 import com.w3engineers.core.videon.ui.images.ImageActivity;
@@ -171,7 +173,7 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
 
         //click listener
         setClickListener(mBinding.buttonSeeAllLive, mBinding.buttonSeeAllFeatured,
-                mBinding.buttonSeeAllMostPopular, mBinding.buttonSeeAllMostRecent, mBinding.floatingActionButton,mBinding.imagesection);
+                mBinding.buttonSeeAllMostPopular, mBinding.buttonSeeAllMostRecent, mBinding.floatingActionButton,mBinding.imagesection,mBinding.audiosection,mBinding.documentsection);
         scrollListenerAndHitServerForVideos();
         //get videos data from server
        // getLiveTVChannelsFromServer();
@@ -789,6 +791,12 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
                 break;
             case R.id.imagesection:
                 ImageActivity.runActivity(this);
+                break;
+            case R.id.audiosection:
+                AudioActivity.runActivity(this);
+                break;
+            case R.id.documentsection:
+                DocumentActivity.runActivity(this);
                 break;
         }
     }
