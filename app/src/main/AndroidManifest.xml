@@ -111,6 +111,7 @@
         <activity android:name=".ui.images.ImageActivity"></activity>
         <activity android:name=".ui.audio.AudioActivity"/>
         <activity android:name=".ui.document.DocumentActivity"/>
+        <activity android:name=".ui.documentdetails.DocumentDetailsActivity"/>
         <activity android:name=".ui.fullscreenactivity.FullScreeActivity" android:theme="@style/AppTheme.Fullscreen" android:screenOrientation="landscape"/>
     </application>
 

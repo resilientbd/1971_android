@@ -22,8 +22,8 @@ import com.w3engineers.core.util.NetworkURL;
 import com.w3engineers.core.util.adapterUtil.ProjectBaseAdapter;
 import com.w3engineers.core.util.helper.ResoulationConverter;
 import com.w3engineers.core.videon.R;
-import com.w3engineers.core.videon.data.local.commondatalistresponse.Datum;
-import com.w3engineers.core.videon.databinding.ItemVideosBinding;
+import com.w3engineers.core.videon.data.local.audio.Datum;
+import com.w3engineers.core.videon.databinding.ItemDocumentBinding;
 
 
 public class AudioAdapter extends ProjectBaseAdapter<Datum> {
@@ -40,26 +40,27 @@ public class AudioAdapter extends ProjectBaseAdapter<Datum> {
 
     @Override
     public BaseAdapterViewHolder<Datum> newViewHolder(ViewGroup parent, int viewType) {
-        return new AudioAdapter.CategoryViewHolder(inflate(parent, R.layout.item_videos));
+        return new AudioAdapter.CategoryViewHolder(inflate(parent, R.layout.item_document));
     }
 
 
     private class CategoryViewHolder extends BaseAdapterViewHolder<Datum>{
 
-        private ItemVideosBinding mBinding;
+        private ItemDocumentBinding mBinding;
         CategoryViewHolder(ViewDataBinding viewDataBinding) {
             super(viewDataBinding);
-            mBinding = (ItemVideosBinding) viewDataBinding;
+            mBinding = (ItemDocumentBinding) viewDataBinding;
         }
 
         @Override
         public void bind(Datum item) {
-            mBinding.textViewMostRecentVideoTitle.setText(item.getTitle());
-            String imageUrl= NetworkURL.imageEndPointURL+item.getImageName();
-            ViewGroup.LayoutParams params=mBinding.roundImageViewLiveTv.getLayoutParams();
-            Integer[] reqHeight= ResoulationConverter.ConvertResoulationWidth(mContext,item.getImageResolution(),(float)params.width);
-            LoadImage(mBinding.roundImageViewLiveTv,mBinding.progressBarCircular,imageUrl,reqHeight);
-            mBinding.durationtext.setText(DurationConverter.GetDurationString(Integer.parseInt(item.getDuration())));
+            mBinding.textViewVideoTitle.setText(item.getAudioTitle());
+            mBinding.textViewSub.setText("sk. faisal");
+            String imageUrl= NetworkURL.imageEndPointURL+item.getAudioImg();
+            // ViewGroup.LayoutParams params=mBinding.roundImageViewLiveTv.getLayoutParams();
+            // Integer[] reqHeight= ResoulationConverter.ConvertResoulationWidth(mContext,item.getImageResolution(),(float)params.width);
+            LoadImage(mBinding.roundImageViewVideo,mBinding.progressBarCircular,imageUrl);
+            //  mBinding.durationtext.setText(DurationConverter.GetDurationString(Integer.parseInt(item.getDuration())));
         }
     }
 
@@ -68,9 +69,9 @@ public class AudioAdapter extends ProjectBaseAdapter<Datum> {
      * @param imageView imageView
      * @param progressBar progressBar
      * @param imageLink imageLink
-     * @param heightWidth heightWidth
+
      */
-    public void LoadImage(ImageView imageView, ProgressBar progressBar, String imageLink, Integer[] heightWidth) {
+    public void LoadImage(ImageView imageView, ProgressBar progressBar, String imageLink) {
 
         try {
             RequestOptions requestOptions = new RequestOptions();

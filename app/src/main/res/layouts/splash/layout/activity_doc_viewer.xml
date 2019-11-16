@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/ic_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_15"
+        android:layout_marginTop="@dimen/margin_16"
+        android:elevation="@dimen/elevation_20"
+        android:paddingTop="@dimen/padding_16"
+        android:paddingRight="@dimen/padding_16"
+        android:paddingBottom="@dimen/padding_16"
+        ads:layout_constraintTop_toTopOf="parent"
+        ads:layout_constraintLeft_toLeftOf="parent"
+        android:src="@drawable/ic_back" />
+<ImageView
+    android:id="@+id/bannerview"
+    android:layout_width="0dp"
+    android:src="@drawable/samplebanner"
+    android:layout_height="300dp"
+    android:scaleType="fitXY"
+    ads:layout_constraintTop_toTopOf="parent"
+    ads:layout_constraintLeft_toLeftOf="parent"
+    ads:layout_constraintRight_toRightOf="parent"/>
+    <View
+        android:id="@+id/fakeview"
+        android:layout_width="match_parent"
+        ads:layout_constraintLeft_toLeftOf="parent"
+        ads:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="50dp"
+        ads:layout_constraintBottom_toBottomOf="@+id/bannerview"
+        android:layout_height="1dp"/>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/docbackground"
+        ads:layout_constraintTop_toTopOf="@+id/fakeview"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintLeft_toLeftOf="parent"
+        ads:layout_constraintRight_toRightOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/doctitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Biday De Ma Ghure Ashi"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+
+            ads:layout_constraintLeft_toLeftOf="parent"
+            ads:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="– Sandra Cisneros"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+
+            ads:layout_constraintRight_toRightOf="parent"
+            ads:layout_constraintLeft_toLeftOf="parent"
+                ads:layout_constraintTop_toBottomOf="@+id/doctitle"
+             />
+
+        <ImageView
+            android:id="@+id/sharebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_share"
+            ads:layout_constraintBottom_toBottomOf="@+id/doctitle"
+            ads:layout_constraintRight_toRightOf="parent"
+            ads:layout_constraintTop_toTopOf="@+id/doctitle" />
+
+        <com.github.barteksc.pdfviewer.PDFView
+            android:id="@+id/pdfview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            ads:layout_constraintBottom_toBottomOf="parent"
+            ads:layout_constraintHorizontal_bias="0.0"
+            ads:layout_constraintLeft_toLeftOf="parent"
+            ads:layout_constraintRight_toRightOf="parent"
+            ads:layout_constraintTop_toBottomOf="@id/subtitle"
+         />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>
+</layout>

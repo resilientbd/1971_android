@@ -18,7 +18,7 @@
             android:paddingRight="@dimen/padding_16"
             android:paddingBottom="@dimen/padding_16"
 
-            android:src="@drawable/ic_arrow_white" />
+            android:src="@drawable/ic_back" />
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/liveLayerIndecator"

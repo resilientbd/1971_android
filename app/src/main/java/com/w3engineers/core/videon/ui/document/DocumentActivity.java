@@ -7,6 +7,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 
 import com.w3engineers.core.util.CheckVideoTypeUtil;
 import com.w3engineers.core.videon.R;
@@ -21,6 +22,7 @@ import com.w3engineers.core.videon.databinding.ActivityVideosBinding;
 import com.w3engineers.core.videon.ui.adapter.CategoryTabsAdapter;
 import com.w3engineers.core.videon.ui.adapter.DocumentAdapter;
 import com.w3engineers.core.videon.ui.adapter.VideoAdapter;
+import com.w3engineers.core.videon.ui.documentdetails.DocumentDetailsActivity;
 import com.w3engineers.core.videon.ui.videodetails.VideoDetailsActivity;
 import com.w3engineers.ext.strom.application.ui.base.BaseActivity;
 import com.w3engineers.ext.strom.application.ui.base.ItemClickListener;
@@ -65,7 +67,13 @@ public class DocumentActivity extends BaseActivity {
         mRemoteVideoApiInterface= RemoteApiProvider.getInstance().getRemoteHomeVideoApi();
         adapter=new CategoryTabsAdapter(this);
         videoadapter=new DocumentAdapter(this);
-
+       videoadapter.setItemClickListener(new ItemClickListener<Datum>() {
+           @Override
+           public void onItemClick(View view, Datum item) {
+               DocumentDetailsActivity.runActivity(DocumentActivity.this);
+               finish();
+           }
+       });
 
         mBinding.categoryTabLayout.setSelectedTabIndicatorColor(Color.TRANSPARENT);
         mBinding.categoryTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
