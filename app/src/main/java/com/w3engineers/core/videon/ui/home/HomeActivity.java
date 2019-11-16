@@ -70,6 +70,7 @@ import com.w3engineers.core.videon.ui.adapter.HomeCategoryAdapter;
 import com.w3engineers.core.videon.ui.channellist.ChannelListActivity;
 import com.w3engineers.core.videon.ui.downloadmanager.DownloadManagerActivity;
 import com.w3engineers.core.videon.ui.empty.EmptyActivity;
+import com.w3engineers.core.videon.ui.images.ImageActivity;
 import com.w3engineers.core.videon.ui.login.LoginActivity;
 import com.w3engineers.core.videon.ui.myprofile.MyProfileActivity;
 import com.w3engineers.core.videon.ui.searchmovies.SearchMoviesActivity;
@@ -80,6 +81,7 @@ import com.w3engineers.core.videon.ui.videos.VideosActivity;
 import com.w3engineers.ext.strom.application.ui.base.BaseActivity;
 import com.w3engineers.ext.strom.application.ui.base.ItemClickListener;
 import com.w3engineers.ext.strom.application.ui.widget.BaseRecyclerView;
+import com.w3engineers.ext.strom.util.helper.Toaster;
 
 import java.util.List;
 
@@ -169,7 +171,7 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
 
         //click listener
         setClickListener(mBinding.buttonSeeAllLive, mBinding.buttonSeeAllFeatured,
-                mBinding.buttonSeeAllMostPopular, mBinding.buttonSeeAllMostRecent, mBinding.floatingActionButton);
+                mBinding.buttonSeeAllMostPopular, mBinding.buttonSeeAllMostRecent, mBinding.floatingActionButton,mBinding.imagesection);
         scrollListenerAndHitServerForVideos();
         //get videos data from server
        // getLiveTVChannelsFromServer();
@@ -784,6 +786,9 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
                 break;
             case R.id.floatingActionButton:
                 startActivityForResult(new Intent(HomeActivity.this, DownloadManagerActivity.class), 111);
+                break;
+            case R.id.imagesection:
+                ImageActivity.runActivity(this);
                 break;
         }
     }

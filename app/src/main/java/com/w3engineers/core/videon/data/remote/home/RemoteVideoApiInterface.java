@@ -4,6 +4,8 @@ import com.w3engineers.core.videon.data.local.apimodels.AdResponse;
 import com.w3engineers.core.videon.data.local.authentication.AuthenticationModel;
 import com.w3engineers.core.videon.data.local.commondatalistresponse.ApiCommonDetailListResponse;
 import com.w3engineers.core.videon.data.local.commondatalistresponse.VideoDetailsByIdResponseModel;
+import com.w3engineers.core.videon.data.local.imagecategories.ImageCategories;
+import com.w3engineers.core.videon.data.local.images.ImageModel;
 import com.w3engineers.core.videon.data.local.userstatus.UserStatus;
 import com.w3engineers.core.videon.data.local.downloadsetting.DownloadSettingResponse;
 import com.w3engineers.core.videon.ui.videodetails.ViewCountResponse;
@@ -239,6 +241,18 @@ public interface RemoteVideoApiInterface {
     @FormUrlEncoded
     @POST("public/api/settings/setting.php")
     Call<DownloadSettingResponse> downLoadSetting(@Field("api_token") String api_token);
+    /**
+     * Get All image categories
+     */
+    @FormUrlEncoded
+    @POST("public/api/category/image-category.php")
+    Call<ImageCategories> getAllImageCategories(@Field("api_token") String api_token, @Field("page") String page);
 
+    /**
+     * request for images by category
+     */
+    @FormUrlEncoded
+    @POST("public/api/image/by-category.php")
+    Call<ImageModel> getImagesByCategory(@Field("api_token") String api_token,@Field("cat_id") String cat_id,@Field("page") String page);
 
 }
