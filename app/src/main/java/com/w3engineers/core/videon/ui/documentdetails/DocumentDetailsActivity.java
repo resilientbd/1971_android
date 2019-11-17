@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -30,6 +31,7 @@ import com.w3engineers.core.videon.R;
 import com.w3engineers.core.videon.data.local.Enums;
 import com.w3engineers.core.videon.databinding.ActivityDocViewerBinding;
 import com.w3engineers.core.videon.databinding.ActivityEmptyBinding;
+import com.w3engineers.core.videon.ui.adapter.SampleAdapter;
 import com.w3engineers.core.videon.ui.login.LoginActivity;
 import com.w3engineers.core.videon.ui.myprofile.MyProfileActivity;
 import com.w3engineers.core.videon.ui.searchmovies.SearchMoviesActivity;
@@ -42,13 +44,16 @@ import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class DocumentDetailsActivity extends BaseActivity  {
-    private String url="http://glazeitsolutions.com/admin/public/uploads/p6f8qlaer7k4ckgk.pdf";
+   // private String url="http://glazeitsolutions.com/admin/public/uploads/p6f8qlaer7k4ckgk.pdf";
+    private String url="http://192.168.63.108/1971admin/public/uploads/ddzczkz45tcs8gcs.pdf";
 
     private ActivityDocViewerBinding mBinding;
-
+    private SampleAdapter mAdapter;
     public static void runActivity(Context context) {
         Intent intent = new Intent(context, DocumentDetailsActivity.class);
         runCurrentActivity(context, intent);
@@ -87,6 +92,51 @@ public class DocumentDetailsActivity extends BaseActivity  {
             }
         }.execute();
 
+        List<String> mString=new ArrayList<>();
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mString.add("asdf");
+        mAdapter=new SampleAdapter(DocumentDetailsActivity.this);
+       mBinding.recyclerview.setLayoutManager(new LinearLayoutManager(DocumentDetailsActivity.this));
+       mBinding.recyclerview.setAdapter(mAdapter);
+       mAdapter.addItems(mString);
     }
 
 
