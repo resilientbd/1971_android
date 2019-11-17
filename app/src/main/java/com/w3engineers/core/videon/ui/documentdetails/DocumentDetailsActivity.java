@@ -45,7 +45,7 @@ import java.net.URL;
 
 
 public class DocumentDetailsActivity extends BaseActivity  {
-    private String url="http://glazeitsolutions.com/admin/public/uploads/p6f8qlaer7k4ckgk.pdf";
+    private String url="http://192.168.63.108/1971admin/public/uploads/ddzczkz45tcs8gcs.pdf";
 
     private ActivityDocViewerBinding mBinding;
 

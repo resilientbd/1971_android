@@ -138,7 +138,7 @@ dependencies {
     // Add dependency
     //pdf reader
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
-
+    implementation 'com.sothree.slidinguppanel:library:3.4.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
