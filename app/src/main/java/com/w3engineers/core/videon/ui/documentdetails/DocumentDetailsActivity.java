@@ -22,12 +22,15 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.gson.Gson;
+import com.w3engineers.core.util.NetworkURL;
 import com.w3engineers.core.util.helper.AppConstants;
 import com.w3engineers.core.util.helper.MySessionManager;
 import com.w3engineers.core.util.helper.PrefType;
 import com.w3engineers.core.util.helper.SharedPref;
 import com.w3engineers.core.videon.R;
 import com.w3engineers.core.videon.data.local.Enums;
+import com.w3engineers.core.videon.data.local.document.Datum;
 import com.w3engineers.core.videon.databinding.ActivityDocViewerBinding;
 import com.w3engineers.core.videon.databinding.ActivityEmptyBinding;
 import com.w3engineers.core.videon.ui.login.LoginActivity;
@@ -45,12 +48,19 @@ import java.net.URL;
 
 
 public class DocumentDetailsActivity extends BaseActivity  {
-    private String url="http://glazeitsolutions.com/admin/public/uploads/p6f8qlaer7k4ckgk.pdf";
+    private String url="http://192.168.63.108/1971admin/public/uploads/ddzczkz45tcs8gcs.pdf";
 
     private ActivityDocViewerBinding mBinding;
 
     public static void runActivity(Context context) {
         Intent intent = new Intent(context, DocumentDetailsActivity.class);
+        runCurrentActivity(context, intent);
+    }
+    public static void runActivity(Context context,Datum datum) {
+        Intent intent = new Intent(context, DocumentDetailsActivity.class);
+        Gson gson=new Gson();
+
+        intent.putExtra("document",gson.toJson(datum));
         runCurrentActivity(context, intent);
     }
 
@@ -64,7 +74,17 @@ public class DocumentDetailsActivity extends BaseActivity  {
     protected void startUI() {
 
         mBinding=(ActivityDocViewerBinding)getViewDataBinding();
+        Gson gson=new Gson();
+        try {
+            String objGson = getIntent().getStringExtra("document");
+            Datum doc = gson.fromJson(objGson, Datum.class);
+            url = NetworkURL.videosEndPointURL + doc.getDocFileUrl();
+            mBinding.doctitle.setText(""+doc.getDocTitle());
+            mBinding.subtitle.setText(""+doc.getDocAuthor());
+        }catch (Exception e)
+        {
 
+        }
             Uri uri=Uri.parse(url);
 
            // mBinding.pdfview.fromSource(url).load();
@@ -86,11 +106,31 @@ public class DocumentDetailsActivity extends BaseActivity  {
                 return null;
             }
         }.execute();
-
+    mBinding.icBack.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            onBackPressed();
+        }
+    });
+    mBinding.sharebtn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            sharecontent();
+        }
+    });
     }
 
 
-
+    void sharecontent()
+    {
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        String shareBody = "Sharable body...";
+        String shareSub = "Sharable Subject";
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, shareSub);
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        startActivity(Intent.createChooser(sharingIntent, "Share using"));
+    }
     @Override
     public void onClick(View view) {
         switch (view.getId()){

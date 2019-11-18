@@ -107,7 +107,7 @@ public class VideosActivity extends BaseActivity {
 
             }
         });
-        setClickListener(mBinding.imageView2);
+        setClickListener(mBinding.backBtn);
         initRecyclerView();
         getVideoCategories();
     }
@@ -188,7 +188,7 @@ public class VideosActivity extends BaseActivity {
     @Override
     public void onClick(View view) {
         super.onClick(view);
-        if(view.getId()==mBinding.imageView2.getId())
+        if(view.getId()==mBinding.backBtn.getId())
         {
             finish();
         }

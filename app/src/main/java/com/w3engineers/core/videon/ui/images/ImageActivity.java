@@ -22,6 +22,7 @@ import com.w3engineers.core.videon.databinding.ActivityVideosBinding;
 
 import com.w3engineers.core.videon.ui.adapter.ImageAdapter;
 
+import com.w3engineers.core.videon.ui.imagedetails.ImageDetailsActivity;
 import com.w3engineers.ext.strom.application.ui.base.BaseActivity;
 import com.w3engineers.ext.strom.application.ui.base.ItemClickListener;
 import com.w3engineers.ext.strom.util.helper.Toaster;
@@ -85,7 +86,7 @@ public class ImageActivity extends BaseActivity {
 
             }
         });
-        setClickListener(mBinding.imageView2);
+        setClickListener(mBinding.backBtn);
         initRecyclerView();
         getVideoCategories();
     }
@@ -98,7 +99,7 @@ public class ImageActivity extends BaseActivity {
         imageAdapter.setItemClickListener(new ItemClickListener<com.w3engineers.core.videon.data.local.images.Datum>() {
             @Override
             public void onItemClick(View view, com.w3engineers.core.videon.data.local.images.Datum item) {
-                Toaster.showLong("click on:"+item.getImgUrl());
+                ImageDetailsActivity.runActivity(ImageActivity.this,item);
             }
         });
     }
@@ -167,7 +168,7 @@ public class ImageActivity extends BaseActivity {
     @Override
     public void onClick(View view) {
         super.onClick(view);
-        if(view.getId()==mBinding.imageView2.getId())
+        if(view.getId()==mBinding.backBtn.getId())
         {
             finish();
         }

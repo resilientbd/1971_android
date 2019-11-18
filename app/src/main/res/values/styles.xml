@@ -54,4 +54,7 @@
     <item name="android:windowNoTitle">true</item>
     <item name="android:windowFullscreen">true</item>
 </style>
+    <style name="progressBarWhite" parent="AppTheme">
+        <item name="colorAccent">@color/white</item> <!-- Whatever color you want-->
+    </style>
 </resources>

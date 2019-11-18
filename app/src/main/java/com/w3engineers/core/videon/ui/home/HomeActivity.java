@@ -382,13 +382,15 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
     }
 
     public void disabpleProgressLayer() {
-        ProgressbarHandler.DismissProgress(this);
+      //  ProgressbarHandler.DismissProgress(this);
         mBinding.progressLayer.setVisibility(View.GONE);
+        mBinding.progressbarmain.setVisibility(View.GONE);
     }
 
     public void enableProgressLayer() {
-        ProgressbarHandler.ShowLoadingProgress(this);
+       // ProgressbarHandler.ShowLoadingProgress(this);
         mBinding.progressLayer.setVisibility(View.VISIBLE);
+        mBinding.progressbarmain.setVisibility(View.VISIBLE);
     }
 
 
@@ -426,7 +428,7 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
      * Get Featured videos channels from server
      */
     private void getFeaturedVideosFromServer() {
-        Call<ApiCommonDetailListResponse> call = mRemoteVideoApiInterface.getFeaturedVideos(ApiToken.GET_TOKEN(getBaseContext()), String.valueOf(getPageNumberToLoadDataFeaturedVideos()));
+        Call<ApiCommonDetailListResponse> call = mRemoteVideoApiInterface.getFeaturedVideos(ApiToken.GET_TOKEN(getBaseContext()), ""+0);
         getDataItemFromServer(call, mBinding.progressBarFeatured, mFeaturedVideoAdapter,
                 mBinding.baseRecyclerViewFeatured, mBinding.constraintLayoutFeaturedSection, Constants.SeeAllVideos.FEATURED_VIDEO_PAGE);
     }
@@ -636,7 +638,7 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
      */
     private void getMostPopularVideosFromServer() {
         Call<ApiCommonDetailListResponse> call = mRemoteVideoApiInterface.getMostPopularVideos(ApiToken.GET_TOKEN(getBaseContext()),
-                String.valueOf(getPageNumberToLoadDataPopularVideos()));
+               "0");
         getDataItemFromServer(call, mBinding.progressBarMostPopular, mMostPopularVideoAdapter,
                 mBinding.baseRecyclerViewMostPopular, mBinding.constraintLayoutPopularSection, Constants.SeeAllVideos.MOST_POPULAR_VIDEO_PAGE);
 

@@ -67,10 +67,17 @@ public class DocumentActivity extends BaseActivity {
         mRemoteVideoApiInterface= RemoteApiProvider.getInstance().getRemoteHomeVideoApi();
         adapter=new CategoryTabsAdapter(this);
         videoadapter=new DocumentAdapter(this);
+        mBinding.backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
        videoadapter.setItemClickListener(new ItemClickListener<Datum>() {
            @Override
            public void onItemClick(View view, Datum item) {
-               DocumentDetailsActivity.runActivity(DocumentActivity.this);
+               DocumentDetailsActivity.runActivity(DocumentActivity.this,item);
                finish();
            }
        });
@@ -92,7 +99,7 @@ public class DocumentActivity extends BaseActivity {
 
             }
         });
-        setClickListener(mBinding.imageView2);
+        setClickListener(mBinding.backBtn);
         initRecyclerView();
         getVideoCategories();
     }
@@ -161,7 +168,7 @@ public class DocumentActivity extends BaseActivity {
     @Override
     public void onClick(View view) {
         super.onClick(view);
-        if(view.getId()==mBinding.imageView2.getId())
+        if(view.getId()==mBinding.backBtn.getId())
         {
             finish();
         }
