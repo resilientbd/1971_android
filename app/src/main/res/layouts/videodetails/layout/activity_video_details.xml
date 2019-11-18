@@ -32,16 +32,16 @@
                 android:id="@+id/imageView3"
                 android:layout_width="10dp"
                 android:layout_height="10dp"
-                android:layout_alignRight="@+id/textView"
+                android:layout_alignRight="@+id/doctitle"
                 android:layout_marginRight="@dimen/margin_12"
                 android:background="@drawable/drawable_circular_shape_red"
-                app:layout_constraintBottom_toBottomOf="@+id/textView"
-                app:layout_constraintEnd_toEndOf="@id/textView"
-                app:layout_constraintEnd_toStartOf="@+id/textView"
-                app:layout_constraintTop_toTopOf="@+id/textView" />
+                app:layout_constraintBottom_toBottomOf="@+id/doctitle"
+                app:layout_constraintEnd_toEndOf="@id/doctitle"
+                app:layout_constraintEnd_toStartOf="@+id/doctitle"
+                app:layout_constraintTop_toTopOf="@+id/doctitle" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/doctitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

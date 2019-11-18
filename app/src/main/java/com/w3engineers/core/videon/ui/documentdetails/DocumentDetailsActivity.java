@@ -32,6 +32,7 @@ import com.w3engineers.core.videon.R;
 import com.w3engineers.core.videon.data.local.Enums;
 import com.w3engineers.core.videon.data.local.document.Datum;
 import com.w3engineers.core.videon.databinding.ActivityDocViewerBinding;
+import com.w3engineers.core.videon.databinding.ActivityDocViewerScrollingBinding;
 import com.w3engineers.core.videon.databinding.ActivityEmptyBinding;
 import com.w3engineers.core.videon.ui.login.LoginActivity;
 import com.w3engineers.core.videon.ui.myprofile.MyProfileActivity;
@@ -50,7 +51,7 @@ import java.net.URL;
 public class DocumentDetailsActivity extends BaseActivity  {
     private String url="http://192.168.63.108/1971admin/public/uploads/ddzczkz45tcs8gcs.pdf";
 
-    private ActivityDocViewerBinding mBinding;
+    private ActivityDocViewerScrollingBinding mBinding;
 
     public static void runActivity(Context context) {
         Intent intent = new Intent(context, DocumentDetailsActivity.class);
@@ -67,13 +68,13 @@ public class DocumentDetailsActivity extends BaseActivity  {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_doc_viewer;
+        return R.layout.activity_doc_viewer_scrolling;
     }
 
     @Override
     protected void startUI() {
 
-        mBinding=(ActivityDocViewerBinding)getViewDataBinding();
+        mBinding=(ActivityDocViewerScrollingBinding)getViewDataBinding();
         Gson gson=new Gson();
         try {
             String objGson = getIntent().getStringExtra("document");
@@ -97,6 +98,8 @@ public class DocumentDetailsActivity extends BaseActivity  {
                         @Override
                         public void onInitiallyRendered(int nbPages, float pageWidth, float pageHeight) {
                             mBinding.pdfview.fitToWidth();
+
+
                         }
                     }).load();
 
@@ -106,12 +109,12 @@ public class DocumentDetailsActivity extends BaseActivity  {
                 return null;
             }
         }.execute();
-    mBinding.icBack.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            onBackPressed();
-        }
-    });
+//    mBinding.icBack.setOnClickListener(new View.OnClickListener() {
+//        @Override
+//        public void onClick(View view) {
+//            onBackPressed();
+//        }
+//    });
     mBinding.sharebtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
