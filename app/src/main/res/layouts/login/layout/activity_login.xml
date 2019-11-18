@@ -70,7 +70,7 @@
                     android:layout_marginRight="@dimen/form_padding_space"
                     android:layout_marginStart="@dimen/form_padding_space"
                     android:layout_marginTop="@dimen/margin_30"
-                    android:fontFamily="@font/helvlight_regular"
+
                     android:drawableLeft="@drawable/ic_facebook"
                     android:minWidth="170dp"
                     android:padding="2dp"
@@ -95,7 +95,7 @@
                     android:layout_marginRight="@dimen/form_padding_space"
                     android:layout_marginStart="@dimen/form_padding_space"
                     android:layout_marginTop="@dimen/margin_16"
-                    android:fontFamily="@font/helvlight_regular"
+
                     android:drawableLeft="@drawable/ic_google"
                     android:minWidth="170dp"
                     android:padding="2dp"
@@ -244,7 +244,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/form_padding_space"
                     android:layout_marginRight="@dimen/form_padding_space"
-                    android:fontFamily="@font/helvlight_regular"
+
                     android:text="@string/text_sign_in"
                     android:layout_marginTop="@dimen/margin_24"
                     android:textAllCaps="false"

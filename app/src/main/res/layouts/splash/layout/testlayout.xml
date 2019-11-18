@@ -180,7 +180,7 @@
                                 android:layout_marginRight="@dimen/margin_16"
                                 android:layout_marginTop="@dimen/margin_16"
                                 android:background="@drawable/drawable_button_see_all_state"
-                                android:fontFamily="@font/helvlight_regular"
+
                                 android:gravity="center"
                                 android:text="See All"
                                 android:textAllCaps="false"
@@ -253,7 +253,7 @@
                                 android:layout_marginRight="@dimen/margin_16"
                                 android:layout_marginTop="@dimen/margin_16"
                                 android:background="@drawable/drawable_button_see_all_state"
-                                android:fontFamily="@font/helvlight_regular"
+
                                 android:gravity="center"
                                 android:text="See All"
                                 android:textAllCaps="false"
@@ -326,7 +326,7 @@
                                 android:layout_marginRight="@dimen/margin_16"
                                 android:layout_marginTop="@dimen/margin_16"
                                 android:background="@drawable/drawable_button_see_all_state"
-                                android:fontFamily="@font/helvlight_regular"
+
                                 android:gravity="center"
                                 android:text="See All"
                                 android:textAllCaps="false"
@@ -400,7 +400,7 @@
                                 android:layout_marginRight="@dimen/margin_16"
                                 android:layout_marginTop="@dimen/margin_16"
                                 android:background="@drawable/drawable_button_see_all_state"
-                                android:fontFamily="@font/helvlight_regular"
+
                                 android:gravity="center"
                                 android:text="See All"
                                 android:textAllCaps="false"

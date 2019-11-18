@@ -95,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_title"
                 android:text="@string/text_no_data_found"
-                android:fontFamily="@font/helveticabold"
+
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/margin_10"

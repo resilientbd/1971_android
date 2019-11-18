@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_title"
                 android:text="@string/activity_data_not_found_see_all_new"
-                android:fontFamily="@font/helveticabold"
+
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/margin_10"

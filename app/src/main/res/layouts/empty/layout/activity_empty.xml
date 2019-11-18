@@ -94,7 +94,7 @@
                     android:id="@+id/text_view_please_access"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/helveticabold"
+
                     android:gravity="center"
                     android:padding="@dimen/padding_16"
                     android:text="@string/text_please_login"
@@ -111,7 +111,7 @@
                     android:layout_height="@dimen/height_40"
                     android:layout_marginLeft="@dimen/form_padding_space"
                     android:layout_marginRight="@dimen/form_padding_space"
-                    android:fontFamily="@font/helveticabold"
+
                     android:text="@string/base_button_login_empty_activity"
                     android:textAllCaps="false"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"

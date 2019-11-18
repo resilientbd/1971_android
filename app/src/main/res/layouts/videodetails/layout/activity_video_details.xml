@@ -283,7 +283,7 @@
                             android:layout_marginStart="@dimen/margin_16"
                             android:layout_marginLeft="@dimen/margin_16"
                             android:layout_marginTop="@dimen/margin_16"
-                            android:fontFamily="@font/helveticabold"
+
                             android:text="@string/video_details_video_title"
                             android:textAppearance="@style/TextAppearance.AppCompat.Title"
                             android:textColor="@color/color_home_category_title"
@@ -380,7 +380,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="@dimen/margin_2"
                                 android:layout_marginLeft="@dimen/margin_2"
-                                android:fontFamily="@font/helvlight_regular"
+
                                 android:text="@string/search_drama"
                                 android:singleLine="true"
                                 android:ellipsize="end"
@@ -404,7 +404,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="@dimen/margin_2"
                                 android:layout_marginLeft="@dimen/margin_2"
-                                android:fontFamily="@font/helvlight_regular"
+
                                 android:text="@string/video_details_text_time_1h_30m"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                                 android:textColor="@color/color_small_text"
@@ -426,7 +426,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="@dimen/margin_2"
                                 android:layout_marginLeft="@dimen/margin_2"
-                                android:fontFamily="@font/helvlight_regular"
+
                                 tools:text="@string/video_details_count_views_4k"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                                 android:textColor="@color/color_small_text"
@@ -448,7 +448,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="@dimen/margin_2"
                                 android:layout_marginLeft="@dimen/margin_2"
-                                android:fontFamily="@font/helvlight_regular"
+
                                 android:text="@string/video_details_upload_time_text_view"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                                 android:textColor="@color/color_small_text"
@@ -485,7 +485,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/spacing_large"
-                            android:fontFamily="@font/helvlight_regular"
+
                             android:paddingLeft="@dimen/padding_2"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textColor="@color/color_home_category_title"
@@ -519,7 +519,7 @@
                                 android:layout_width="@dimen/width_120"
                                 android:layout_height="@dimen/height_30"
                                 android:background="@drawable/drawable_rectangular_search_active"
-                                android:fontFamily="@font/helvlight_regular"
+
                                 android:gravity="center"
                                 android:padding="@dimen/padding_5"
                                 android:text="@string/video_details_text_rate_this"

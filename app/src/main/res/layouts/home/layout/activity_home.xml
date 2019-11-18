@@ -446,7 +446,7 @@
                             android:layout_marginEnd="@dimen/margin_16"
                             android:layout_marginRight="@dimen/margin_16"
                             android:background="@drawable/drawable_button_see_all_state"
-                            android:fontFamily="@font/helvlight_regular"
+
                             android:gravity="center"
                             android:text="@string/button_see_all_home"
                             android:textAllCaps="false"
@@ -520,7 +520,7 @@
                             android:layout_marginEnd="@dimen/margin_16"
                             android:layout_marginRight="@dimen/margin_16"
                             android:background="@drawable/drawable_button_see_all_state"
-                            android:fontFamily="@font/helvlight_regular"
+
                             android:gravity="center"
                             android:text="@string/button_see_all_featured"
                             android:visibility="gone"
@@ -594,7 +594,7 @@
                             android:layout_marginEnd="@dimen/margin_16"
                             android:layout_marginRight="@dimen/margin_16"
                             android:background="@drawable/drawable_button_see_all_state"
-                            android:fontFamily="@font/helvlight_regular"
+
                             android:gravity="center"
                             android:text="@string/see_all_most_popular_new"
                             android:visibility="gone"
@@ -669,7 +669,7 @@
                             android:layout_marginEnd="@dimen/margin_16"
                             android:layout_marginRight="@dimen/margin_16"
                             android:background="@drawable/drawable_button_see_all_state"
-                            android:fontFamily="@font/helvlight_regular"
+
                             android:gravity="center"
                             android:text="@string/see_all_most_recent"
                             android:textAllCaps="false"
