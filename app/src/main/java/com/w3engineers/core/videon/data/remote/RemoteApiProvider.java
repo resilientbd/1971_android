@@ -10,8 +10,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RemoteApiProvider {
 
   //  private static final String BASE_URL = "http://192.168.63.108/videon-admin/";
-  //  private static final String BASE_URL = "http://192.168.63.108/1971admin/";
-   private static final String BASE_URL = "http://glazeitsolutions.com/admin/";
+    private static final String BASE_URL = "http://192.168.63.108/1971admin/";
+  // private static final String BASE_URL = "http://glazeitsolutions.com/admin/";
     //private static final String BASE_URL = "https://theme1.w3engineers.com/vid/";
     private static RemoteApiProvider mInstance;
     private Retrofit retrofit;
