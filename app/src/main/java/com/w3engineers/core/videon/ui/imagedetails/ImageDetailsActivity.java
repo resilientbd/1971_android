@@ -2,12 +2,25 @@ package com.w3engineers.core.videon.ui.imagedetails;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.support.annotation.Nullable;
 import android.text.Html;
+import android.text.Layout;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.Display;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.google.gson.Gson;
 import com.w3engineers.core.util.NetworkURL;
+import com.w3engineers.core.util.RatioConverter;
 import com.w3engineers.core.videon.R;
 import com.w3engineers.core.videon.data.local.images.Datum;
 import com.w3engineers.core.videon.data.remote.RemoteApiProvider;
@@ -54,11 +67,45 @@ setClickListener(mBinding.backBtn,mBinding.upbtn,mBinding.imgmain);
         try{
             String string=getIntent().getStringExtra("image");
             Datum datum=gson.fromJson(string,Datum.class);
-            Glide.with(ImageDetailsActivity.this).load(NetworkURL.videosEndPointURL+datum.getImgUrl()).into(mBinding.imgmain);
+//            Glide.with(ImageDetailsActivity.this).asBitmap().load(NetworkURL.videosEndPointURL+datum.getImgUrl()).listener(new RequestListener<Bitmap>() {
+//                @Override
+//                public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
+//                    Log.d("calculate","error:"+e.getMessage());
+//                    return false;
+//                }
+//
+//                @Override
+//                public boolean onResourceReady(Bitmap resource, Object model, Target<Bitmap> target, DataSource dataSource, boolean isFirstResource) {
+////                    Display display = getWindowManager().getDefaultDisplay();
+////                    DisplayMetrics outMetrics = new DisplayMetrics ();
+////                    float density  = getResources().getDisplayMetrics().density;
+////                    float dpHeight = outMetrics.heightPixels / density;
+////                    float dpWidth  = outMetrics.widthPixels / density;
+//
+//                    Configuration configuration = getResources().getConfiguration();
+//                    int screenWidthDp = configuration.screenWidthDp; //The current width of the available screen space, in dp units, corresponding to screen width resource qualifier.
+//                    int smallestScreenWidthDp = configuration.smallestScreenWidthDp;
+//                    Log.d("calculate","Display Height:"+RatioConverter.GetRequiredHeight(resource.getWidth(),resource.getHeight(),smallestScreenWidthDp));
+//                     Log.d("calculate","Display Width:"+screenWidthDp);
+//                     Log.d("calculate","Height:"+resource.getHeight());
+//                      Log.d("calculate","Width:"+resource.getWidth());
+//                    ViewGroup.LayoutParams params=mBinding.imgmain.getLayoutParams();
+//                    params.height= RatioConverter.GetRequiredHeight(resource.getWidth(),resource.getHeight(),smallestScreenWidthDp);
+//                    //mBinding.imgmain.setImageBitmap(resource);
+//                    //Glide.with(ImageDetailsActivity.this).load(NetworkURL.videosEndPointURL+datum.getImgUrl()).into(mBinding.imgmain);
+//                    //Log.d("calculate","Width:"+mBinding.imgmain);
+//                    return false;
+//                }
+//            }).submit();
+        Glide.with(ImageDetailsActivity.this).asBitmap().load(NetworkURL.videosEndPointURL+datum.getImageResolution()).into(mBinding.imgmain);
+           // Log.d("calculate","Height:"+bitmap.getHeight());
+          //  Log.d("calculate","Width:"+bitmap.getWidth());
+
             mBinding.doctitle.setText(""+datum.getImgTitle());
             mBinding.desc.setText(Html.fromHtml(""+datum.getImgDesc()));
         }catch (Exception e)
         {
+            Log.d("calculate","error:"+e.getMessage());
 
         }
         mBinding.backBtn.setOnClickListener(new View.OnClickListener() {
