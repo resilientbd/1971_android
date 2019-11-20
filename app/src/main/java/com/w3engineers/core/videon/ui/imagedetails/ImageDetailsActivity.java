@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.text.Html;
 import android.text.Layout;
@@ -12,11 +13,16 @@ import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.load.resource.bitmap.FitCenter;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 import com.google.gson.Gson;
 import com.w3engineers.core.util.NetworkURL;
@@ -29,11 +35,12 @@ import com.w3engineers.core.videon.data.remote.home.RemoteVideoApiInterface;
 import com.w3engineers.core.videon.databinding.ActivityDocViewerBinding;
 import com.w3engineers.core.videon.databinding.ActivityImageDetailsBinding;
 import com.w3engineers.core.videon.databinding.ActivityImagesBinding;
+import com.w3engineers.core.videon.ui.home.UICommunicator;
 import com.w3engineers.core.videon.ui.login.LoginActivity;
 import com.w3engineers.ext.strom.application.ui.base.BaseActivity;
 
 
-public class ImageDetailsActivity extends BaseActivity {
+public class ImageDetailsActivity extends BaseActivity implements UICommunicator{
 
 
     private ActivityImageDetailsBinding mBinding;
@@ -96,10 +103,12 @@ setClickListener(mBinding.backBtn,mBinding.upbtn,mBinding.imgmain);
                     Log.d("calculate",""+height[0]+":"+height[1]);
                     ViewGroup.LayoutParams params=mBinding.imgmain.getLayoutParams();
                     params.height= height[0];
+                    mBinding.imgmain.setLayoutParams(params);
 
                    // mBinding.imgmain.setImageBitmap(resource);
                    // RatioConverter.GetResizedBitmap(resource,screenWidthDp,RatioConverter.GetRequiredHeight(resource.getWidth(),resource.getHeight(),screenWidthDp));
                 //  mBinding.imgmain.setImageBitmap(RatioConverter.GetResizedBitmap(resource,screenWidthDp,RatioConverter.GetRequiredHeight(resource.getWidth(),resource.getHeight(),screenWidthDp)));
+                    LoadImage(mBinding.imgmain,mBinding.progressBar,NetworkURL.videosEndPointURL+datum.getImgUrl(),height);
                     Glide.with(ImageDetailsActivity.this).load(NetworkURL.videosEndPointURL+datum.getImgUrl()).into(mBinding.imgmain);
                     //Log.d("calculate","Width:"+mBinding.imgmain);
                     return false;
@@ -179,6 +188,33 @@ private void setContentVisibility()
 }
 
 
+    @Override
+    public void LoadImage(ImageView imageView, ProgressBar progressBar, String imageLink, Integer[] heightWidth) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                RequestOptions requestOptions = new RequestOptions();
+                requestOptions = requestOptions.transforms(new FitCenter(), new RoundedCorners(5)).override(heightWidth[0], heightWidth[1]).error(R.drawable.default_img); // resizes the image to these dimensions (in pixel)
+                Glide.with(getBaseContext())
+                        .load(imageLink)
+                        .listener(new RequestListener<Drawable>() {
+                            @Override
+                            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                                progressBar.setVisibility(View.GONE);
+                                Log.d("fabtest", "Error: " + e);
+                                return false;
+                            }
 
+                            @Override
+                            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                                progressBar.setVisibility(View.GONE);
+                                return false;
+                            }
+                        })
+                        .apply(requestOptions)
+                        .into(imageView);
 
+            }
+        });
+    }
 }

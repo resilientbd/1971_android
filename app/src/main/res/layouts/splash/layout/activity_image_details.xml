@@ -95,5 +95,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:src="@drawable/ic_back" />
-    </android.support.constraint.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgmain"
+        app:layout_constraintStart_toStartOf="@+id/imgmain"
+        app:layout_constraintTop_toTopOf="@+id/imgmain" />
+</android.support.constraint.ConstraintLayout>
 </layout>
