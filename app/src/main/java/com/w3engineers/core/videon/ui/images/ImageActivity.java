@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.View;
 
@@ -95,7 +96,7 @@ public class ImageActivity extends BaseActivity {
 
 
         mBinding.imagesRecyclerview.setAdapter(imageAdapter);
-        mBinding.imagesRecyclerview.setLayoutManager(new GridLayoutManager(this,2));
+        mBinding.imagesRecyclerview.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         imageAdapter.setItemClickListener(new ItemClickListener<com.w3engineers.core.videon.data.local.images.Datum>() {
             @Override
             public void onItemClick(View view, com.w3engineers.core.videon.data.local.images.Datum item) {

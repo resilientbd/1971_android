@@ -70,7 +70,7 @@ public class AudioActivity extends BaseActivity {
         videoadapter.setItemClickListener(new ItemClickListener<Datum>() {
             @Override
             public void onItemClick(View view, Datum item) {
-                AudioDetailsActivity.runActivity(AudioActivity.this);
+                AudioDetailsActivity.runActivity(AudioActivity.this,item);
             }
         });
         mBinding.categoryTabLayout.setSelectedTabIndicatorColor(Color.TRANSPARENT);

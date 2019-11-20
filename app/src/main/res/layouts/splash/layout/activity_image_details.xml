@@ -14,9 +14,10 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
-    android:src="@drawable/samplebanner"
+    android:src="@drawable/default_img"
     android:scaleType="fitCenter"
-    android:layout_width="wrap_content"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"/>
     <ImageView
 
@@ -25,6 +26,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="50dp"
+        android:scaleType="fitCenter"
+        android:elevation="16dp"
+        android:padding="4dp"
+        android:background="@color/transparent_black"
         android:src="@drawable/ic_up_white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

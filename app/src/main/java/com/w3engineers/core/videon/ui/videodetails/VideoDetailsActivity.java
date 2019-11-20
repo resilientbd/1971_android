@@ -914,7 +914,7 @@ boolean isLivePlayTwice;
             case R.id.max_min:
                 maximize();
                 break;
-            case R.id.forward:
+            case R.id.forward_media:
                 firstforward(view);
                 break;
             case R.id.backword:
