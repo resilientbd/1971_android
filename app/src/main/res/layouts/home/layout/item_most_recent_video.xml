@@ -30,7 +30,7 @@
             android:layout_marginTop="@dimen/margin_8"
             android:ellipsize="end"
             android:maxLines="1"
-            android:fontFamily="@font/helveticabold"
+
             android:text="@string/text_game_thrones"
             android:textColor="@color/white"
             android:textSize="@dimen/text_body"
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="1"
-            android:fontFamily="@font/helvlight_regular"
+
             android:text="@string/text_tv_series"
 
             android:textColor="@color/white"

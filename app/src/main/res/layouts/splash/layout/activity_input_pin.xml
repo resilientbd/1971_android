@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_16"
                     android:layout_marginRight="@dimen/margin_16"
-                    android:fontFamily="@font/helvlight_regular"
+
 
                     android:text="@string/email_send_message"
                     android:textAlignment="center"
@@ -103,7 +103,7 @@
                     android:layout_marginRight="@dimen/margin_16"
                     android:alpha="0.5"
                     android:clickable="false"
-                    android:fontFamily="@font/helvlight_regular"
+
                     android:text="@string/text_resend_code"
                     android:textSize="@dimen/text_title"
                     android:textStyle="bold"
@@ -116,7 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/text_title"
-                    android:fontFamily="@font/helvlight_regular"
+
                     android:layout_marginTop="@dimen/margin_8"
                     app:layout_constraintEnd_toEndOf="@+id/resend_code"
                     app:layout_constraintStart_toStartOf="@+id/resend_code"

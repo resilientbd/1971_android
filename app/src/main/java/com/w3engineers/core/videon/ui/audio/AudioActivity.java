@@ -10,14 +10,18 @@ import android.view.View;
 
 import com.w3engineers.core.util.CheckVideoTypeUtil;
 import com.w3engineers.core.videon.R;
+import com.w3engineers.core.videon.data.local.audio.Audio;
+import com.w3engineers.core.videon.data.local.audio.Datum;
+import com.w3engineers.core.videon.data.local.audiocategories.AudioCategories;
 import com.w3engineers.core.videon.data.local.commondatalistresponse.ApiCommonDetailListResponse;
-import com.w3engineers.core.videon.data.local.commondatalistresponse.Datum;
 import com.w3engineers.core.videon.data.remote.RemoteApiProvider;
 import com.w3engineers.core.videon.data.remote.home.RemoteVideoApiInterface;
 import com.w3engineers.core.videon.databinding.ActivityAudioBinding;
 import com.w3engineers.core.videon.databinding.ActivityVideosBinding;
+import com.w3engineers.core.videon.ui.adapter.AudioAdapter;
 import com.w3engineers.core.videon.ui.adapter.CategoryTabsAdapter;
 import com.w3engineers.core.videon.ui.adapter.VideoAdapter;
+import com.w3engineers.core.videon.ui.audiodetails.AudioDetailsActivity;
 import com.w3engineers.core.videon.ui.videodetails.VideoDetailsActivity;
 import com.w3engineers.ext.strom.application.ui.base.BaseActivity;
 import com.w3engineers.ext.strom.application.ui.base.ItemClickListener;
@@ -34,20 +38,20 @@ public class AudioActivity extends BaseActivity {
 
     private ActivityAudioBinding mBinding;
     //This list for search
-    public  List<Datum> mModelList = new ArrayList<>();
+    public  List<com.w3engineers.core.videon.data.local.audiocategories.Datum> mModelList = new ArrayList<>();
 
     private RemoteVideoApiInterface mRemoteVideoApiInterface;
     private CategoryTabsAdapter adapter;
-    private VideoAdapter videoadapter;
+    private AudioAdapter videoadapter;
     public static void runActivity(Context context) {
         Intent intent = new Intent(context, AudioActivity.class);
         runCurrentActivity(context, intent);
     }
 
-    private void initTabs(List<Datum> tabs)
+    private void initTabs(List<com.w3engineers.core.videon.data.local.audiocategories.Datum> tabs)
     {
-        for(Datum datum:tabs){
-            mBinding.categoryTabLayout.addTab(mBinding.categoryTabLayout.newTab().setText(datum.getTitle()));
+        for(com.w3engineers.core.videon.data.local.audiocategories.Datum datum:tabs){
+            mBinding.categoryTabLayout.addTab(mBinding.categoryTabLayout.newTab().setText(datum.getCatName()));
         }
 
     }
@@ -61,14 +65,19 @@ public class AudioActivity extends BaseActivity {
          mBinding=(ActivityAudioBinding)getViewDataBinding();
         mRemoteVideoApiInterface= RemoteApiProvider.getInstance().getRemoteHomeVideoApi();
         adapter=new CategoryTabsAdapter(this);
-        videoadapter=new VideoAdapter(this);
+        videoadapter=new AudioAdapter(this);
 
-
+        videoadapter.setItemClickListener(new ItemClickListener<Datum>() {
+            @Override
+            public void onItemClick(View view, Datum item) {
+                AudioDetailsActivity.runActivity(AudioActivity.this,item);
+            }
+        });
         mBinding.categoryTabLayout.setSelectedTabIndicatorColor(Color.TRANSPARENT);
         mBinding.categoryTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-               getVideosByCategory(mModelList.get(tab.getPosition()).getId());
+               getVideosByCategory(mModelList.get(tab.getPosition()).getCatId());
             }
 
             @Override
@@ -81,7 +90,7 @@ public class AudioActivity extends BaseActivity {
 
             }
         });
-        setClickListener(mBinding.imageView2);
+        setClickListener(mBinding.backBtn);
         initRecyclerView();
         getVideoCategories();
     }
@@ -91,29 +100,23 @@ public class AudioActivity extends BaseActivity {
 
         mBinding.imagesRecyclerview.setAdapter(videoadapter);
         mBinding.imagesRecyclerview.setLayoutManager(new LinearLayoutManager(this));
-        videoadapter.setItemClickListener(new ItemClickListener<Datum>() {
-            @Override
-            public void onItemClick(View view, Datum item) {
-                CheckVideoTypeUtil.checkVideoType(item);
-                VideoDetailsActivity.runActivity(AudioActivity.this,item);
-            }
-        });
+
     }
 
     private void getVideoCategories()
     {
-        mRemoteVideoApiInterface.getCategoryVideos(getResources().getString(R.string.api_token_value),"0").enqueue(new Callback<ApiCommonDetailListResponse>() {
+        mRemoteVideoApiInterface.getAllAudioCategories(getResources().getString(R.string.api_token_value),"0").enqueue(new Callback<AudioCategories>() {
             @Override
-            public void onResponse(Call<ApiCommonDetailListResponse> call, Response<ApiCommonDetailListResponse> response) {
+            public void onResponse(Call<AudioCategories> call, Response<AudioCategories> response) {
                 if(response.isSuccessful())
                 {
-                    ApiCommonDetailListResponse apiCommonDetailListResponse=response.body();
+                    AudioCategories apiCommonDetailListResponse=response.body();
                     //adapter.addItem
                     Log.d("datacheck","data:"+apiCommonDetailListResponse.toString());
                     mModelList=apiCommonDetailListResponse.getData();
 
                     initTabs(mModelList);
-                    getVideosByCategory(mModelList.get(0).getId());
+                    getVideosByCategory(mModelList.get(0).getCatId());
 
 
                 }
@@ -124,7 +127,7 @@ public class AudioActivity extends BaseActivity {
             }
 
             @Override
-            public void onFailure(Call<ApiCommonDetailListResponse> call, Throwable t) {
+            public void onFailure(Call<AudioCategories> call, Throwable t) {
                 Log.d("datacheck","failure:"+t.getMessage());
 
             }
@@ -133,9 +136,9 @@ public class AudioActivity extends BaseActivity {
 
     private void getVideosByCategory(String cat_id)
     {
-        mRemoteVideoApiInterface.getVideosByCategory(getResources().getString(R.string.api_token_value),cat_id,"0").enqueue(new Callback<ApiCommonDetailListResponse>() {
+        mRemoteVideoApiInterface.getAudioByCategory(getResources().getString(R.string.api_token_value),cat_id,"0").enqueue(new Callback<Audio>() {
             @Override
-            public void onResponse(Call<ApiCommonDetailListResponse> call, Response<ApiCommonDetailListResponse> response) {
+            public void onResponse(Call<Audio> call, Response<Audio> response) {
 
                 if(response.isSuccessful())
                 {
@@ -152,8 +155,9 @@ public class AudioActivity extends BaseActivity {
                 }
             }
 
+
             @Override
-            public void onFailure(Call<ApiCommonDetailListResponse> call, Throwable t) {
+            public void onFailure(Call<Audio> call, Throwable t) {
                 Log.d("datacheck","error:"+t.getMessage());
             }
         });
@@ -162,7 +166,7 @@ public class AudioActivity extends BaseActivity {
     @Override
     public void onClick(View view) {
         super.onClick(view);
-        if(view.getId()==mBinding.imageView2.getId())
+        if(view.getId()==mBinding.backBtn.getId())
         {
             finish();
         }

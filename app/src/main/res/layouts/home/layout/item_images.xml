@@ -13,9 +13,9 @@
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/round_image_view_live_tv"
             android:layout_width="0dp"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             app:riv_corner_radius="2dp"
             android:src="@drawable/default_img"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:maxLines="1" android:fontFamily="@font/helvlight_regular"
+
             android:text="@string/text_tv_series"
             android:textColor="@color/white"
             android:textSize="@dimen/text_small_body"

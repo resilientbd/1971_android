@@ -17,9 +17,9 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@drawable/ic_logo_fav"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_logo_fav"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
@@ -111,6 +111,9 @@
         <activity android:name=".ui.images.ImageActivity"></activity>
         <activity android:name=".ui.audio.AudioActivity"/>
         <activity android:name=".ui.document.DocumentActivity"/>
+        <activity android:name=".ui.documentdetails.DocumentDetailsActivity"/>
+        <activity android:name=".ui.audiodetails.AudioDetailsActivity"/>
+        <activity android:name=".ui.imagedetails.ImageDetailsActivity"/>
         <activity android:name=".ui.fullscreenactivity.FullScreeActivity" android:theme="@style/AppTheme.Fullscreen" android:screenOrientation="landscape"/>
     </application>
 

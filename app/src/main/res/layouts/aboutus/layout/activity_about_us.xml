@@ -39,7 +39,7 @@
                     android:id="@+id/about_us"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/helvlight_regular"
+                   
                     android:text="@string/text_dummy_about_us"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     app:layout_constraintTop_toTopOf="parent"

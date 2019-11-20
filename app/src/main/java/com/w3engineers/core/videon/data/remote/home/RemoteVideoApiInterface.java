@@ -3,9 +3,14 @@ package com.w3engineers.core.videon.data.remote.home;
 import android.provider.MediaStore;
 
 import com.w3engineers.core.videon.data.local.apimodels.AdResponse;
+import com.w3engineers.core.videon.data.local.audio.Audio;
+import com.w3engineers.core.videon.data.local.audiocategories.AudioCategories;
 import com.w3engineers.core.videon.data.local.authentication.AuthenticationModel;
 import com.w3engineers.core.videon.data.local.commondatalistresponse.ApiCommonDetailListResponse;
 import com.w3engineers.core.videon.data.local.commondatalistresponse.VideoDetailsByIdResponseModel;
+import com.w3engineers.core.videon.data.local.document.Documents;
+import com.w3engineers.core.videon.data.local.documentcategories.DocumentCategories;
+import com.w3engineers.core.videon.data.local.imagecategories.Datum;
 import com.w3engineers.core.videon.data.local.imagecategories.ImageCategories;
 import com.w3engineers.core.videon.data.local.images.ImageModel;
 import com.w3engineers.core.videon.data.local.userstatus.UserStatus;
@@ -261,13 +266,27 @@ public interface RemoteVideoApiInterface {
      */
     @FormUrlEncoded
     @POST("public/api/category/audio-category.php")
-    Call<ImageCategories> getAllAudioCategories(@Field("api_token") String api_token, @Field("page") String page);
+    Call<AudioCategories> getAllAudioCategories(@Field("api_token") String api_token, @Field("page") String page);
 
     /**
      * request for audio by category
      */
     @FormUrlEncoded
     @POST("public/api/audio/by-category.php")
-    Call<MediaStore.Audio> getAudioByCategory(@Field("api_token") String api_token, @Field("cat_id") String cat_id, @Field("page") String page);
+    Call<Audio> getAudioByCategory(@Field("api_token") String api_token, @Field("cat_id") String cat_id, @Field("page") String page);
+
+    /**
+     * Get All document categories
+     */
+    @FormUrlEncoded
+    @POST("public/api/category/document-category.php")
+    Call<DocumentCategories> getDocumentCategories(@Field("api_token") String api_token, @Field("page") String page);
+
+    /**
+     * request for document by category
+     */
+    @FormUrlEncoded
+    @POST("public/api/document/by-category.php")
+    Call<Documents> getDocumentById(@Field("api_token") String api_token, @Field("cat_id") String cat_id, @Field("page") String page);
 
 }

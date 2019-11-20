@@ -165,7 +165,7 @@
                     android:minHeight="50dp"
                     android:text="@string/text_sign_up"
                     android:textAllCaps="false"
-                    android:fontFamily="@font/helvlight_regular"
+
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     android:textColor="@color/white"
                     app:bb_drawable="@drawable/gradient_button_orange"
