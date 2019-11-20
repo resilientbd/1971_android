@@ -3,7 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v4.widget.DrawerLayout
+        android:orientation="vertical"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
 
+        tools:openDrawer="end">
     <android.support.constraint.ConstraintLayout
     android:background="@color/colorPrimary"
             android:layout_width="match_parent"
@@ -737,6 +744,18 @@
              />
 
     </android.support.constraint.ConstraintLayout>
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header"
+            ads:itemTextColor="@color/white"
+            ads:itemIconTint="@color/white"
+            android:background="@color/colorPrimary"
+            app:menu="@menu/activity_home_drawer"/>
+    </android.support.v4.widget.DrawerLayout>
 
 
 </layout>

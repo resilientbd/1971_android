@@ -12,13 +12,18 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -94,8 +99,10 @@ import retrofit2.Response;
 
 public class HomeActivity extends BaseActivity implements ItemClickListener<Model>, UICommunicator,
         MySessionManager.CallBackListener, TextView.OnEditorActionListener,
-        SwipeRefreshLayout.OnRefreshListener {
-
+        SwipeRefreshLayout.OnRefreshListener, NavigationView.OnNavigationItemSelectedListener {
+    Toolbar toolbar;
+    DrawerLayout drawer ;
+    ActionBarDrawerToggle mDrawerToogle;
     private ActivityHomeBinding mBinding;
     private HomeCategoryAdapter mCategoryAdapter;
     private CommonDataAdapter liveDataAdapter;
@@ -116,6 +123,7 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
     CheckNetworkAvailabilityAndPermission mCheckNetworkAvailabilityAndPermission = new CheckNetworkAvailabilityAndPermission();
 
     private RemoteVideoApiInterface mRemoteVideoApiInterface;
+    private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,6 +152,32 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
     protected void startUI() {
 
         mBinding = (ActivityHomeBinding) getViewDataBinding();
+        toolbar=mBinding.toolbarHome;
+        drawer=mBinding.drawerLayout;
+        //nav setup
+        mDrawerToogle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(mDrawerToogle);
+
+        mDrawerToogle.syncState();
+//        mDrawerToggle.setToolbarNavigationClickListener(this);
+        toolbar.setNavigationIcon(null);
+
+        NavigationView navigationView = mBinding.navView;
+        navigationView.setNavigationItemSelectedListener(this);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Log.d("chk","Clicked!!");
+                if (drawer.isDrawerOpen(Gravity.RIGHT)) {
+                    drawer.closeDrawer(Gravity.RIGHT);
+                } else {
+                    drawer.openDrawer(Gravity.RIGHT);
+                }
+            }
+        });
         mBinding.videosection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -173,7 +207,7 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
 
         //click listener
         setClickListener(mBinding.buttonSeeAllLive, mBinding.buttonSeeAllFeatured,
-                mBinding.buttonSeeAllMostPopular, mBinding.buttonSeeAllMostRecent, mBinding.floatingActionButton,mBinding.imagesection,mBinding.audiosection,mBinding.documentsection);
+                mBinding.buttonSeeAllMostPopular, mBinding.buttonSeeAllMostRecent, mBinding.floatingActionButton,mBinding.imagesection,mBinding.audiosection,mBinding.documentsection,mBinding.navbutton);
         scrollListenerAndHitServerForVideos();
         //get videos data from server
        // getLiveTVChannelsFromServer();
@@ -800,6 +834,13 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
             case R.id.documentsection:
                 DocumentActivity.runActivity(this);
                 break;
+            case R.id.navbutton:
+                if (drawer.isDrawerOpen(Gravity.RIGHT)) {
+                    drawer.closeDrawer(Gravity.RIGHT);
+                } else {
+                    drawer.openDrawer(Gravity.RIGHT);
+                }
+                break;
         }
     }
 
@@ -828,44 +869,33 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.action_profile:
-                if (!SharedPref.read(PrefType.USER_REGID).equals("")) {
-                    //login state
-                    MyProfileActivity.runActivity(this);
-                } else {
-                    gotToEmptyActivity();
-
-                }
-                return true;
-            case R.id.action_settings:
-                //login state
-                SettingActivity.runActivity(this);
-
-                return true;
-            case R.id.action_login:
-                if (!SharedPref.read(PrefType.USER_REGID).equals("")) {
-                    //login state
-                    alertDialog();
-                } else {
-                    LoginActivity.runActivity(this);
-                    //  finish();
-                }
-                return true;
-            case R.id.action_playlist:
-                if (!SharedPref.read(PrefType.USER_REGID).equals("")) {
-                    //login state
-                    MyProfileActivity.runActivity(this);
-                } else {
-                    gotToEmptyActivity();
-                }
-                return true;
-
-            case android.R.id.home:
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        Log.d("itemclick","item:"+item.getTitle());
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
         }
+
+//        else {
+//            switch (item.getItemId()) {
+//                case R.id.nav_about_us:
+//
+//                    return true;
+//                case R.id.nav_contact_us:
+//
+//                    return true;
+//                case R.id.nav_rating:
+//
+//                    return true;
+//                case R.id.nav_privacy:
+//
+//                    return true;
+//
+//                default:
+//                    return super.onOptionsItemSelected(item);
+//            }
+//        }
+        drawer.closeDrawer(Gravity.END);
+        return super.onOptionsItemSelected(item);
+
     }
 
     /**
@@ -1175,5 +1205,32 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
     protected void onResume() {
         super.onResume();
         updateViews();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        if (drawer.isDrawerOpen(Gravity.RIGHT)) {
+            drawer.closeDrawer(Gravity.RIGHT);
+        } else {
+            drawer.openDrawer(Gravity.RIGHT);
+        }
+        switch (menuItem.getItemId()) {
+                case R.id.nav_about_us:
+                        Log.d("chk","about us");
+                    return true;
+                case R.id.nav_contact_us:
+
+                    return true;
+                case R.id.nav_rating:
+
+                    return true;
+                case R.id.nav_privacy:
+
+                    return true;
+
+                default:
+                    return super.onOptionsItemSelected(menuItem);
+            }
+
     }
 }

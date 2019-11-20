@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_about_us"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="About Us" />
+        <item
+            android:id="@+id/nav_contact_us"
+            android:icon="@drawable/ic_perm_contact_calendar_black_24dp"
+            android:title="Contact Us" />
+        <item
+            android:id="@+id/nav_rating"
+            android:icon="@drawable/ic_star_black_24dp"
+            android:title="Rate Us" />
+        <item
+            android:id="@+id/nav_privacy"
+            android:icon="@drawable/ic_security_black_24dp"
+            android:title="Privacy Policy" />
+
+
+
+    </group>
+
+
+
+</menu>
