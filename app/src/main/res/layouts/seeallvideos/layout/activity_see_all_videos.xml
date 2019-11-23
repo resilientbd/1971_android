@@ -78,7 +78,7 @@
             android:layout_marginTop="@dimen/margin_16"
             android:visibility="gone"
             app:layout_constraintTop_toBottomOf="@+id/category_tabs">
-            <com.w3engineers.core.videon.ui.videodetails.SquareImageView
+            <com.shadowhite.archieve1971.ui.videodetails.SquareImageView
                 android:id="@+id/squareImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

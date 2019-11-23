@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "657720538107",
-    "firebase_url": "https://videonpie.firebaseio.com",
-    "project_id": "videonpie",
-    "storage_bucket": "videonpie.appspot.com"
+    "project_number": "757923525947",
+    "firebase_url": "https://project-3040093098733902319.firebaseio.com",
+    "project_id": "project-3040093098733902319",
+    "storage_bucket": "project-3040093098733902319.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:657720538107:android:3a1a4023191c1ed05fd15e",
+        "mobilesdk_app_id": "1:757923525947:android:87abfb18c13a030ba7731e",
         "android_client_info": {
-          "package_name": "com.w3engineers.core.videon"
+          "package_name": "com.shadowhite.archieve1971"
         }
       },
       "oauth_client": [
         {
-          "client_id": "657720538107-uuic8hivc51tal0e2o3f3dnb9njlhlk5.apps.googleusercontent.com",
+          "client_id": "757923525947-057o31nn8bkai1c3uv06393gtlbvbc1f.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBEynljH3eq03DKfD1XY8sPUouhigBM6bY"
+          "current_key": "AIzaSyCnSnB8AA4g7Z-FHbWbct6SkPZXZDRM1kM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "657720538107-uuic8hivc51tal0e2o3f3dnb9njlhlk5.apps.googleusercontent.com",
+              "client_id": "757923525947-057o31nn8bkai1c3uv06393gtlbvbc1f.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
