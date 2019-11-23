@@ -120,6 +120,7 @@
             android:name=".ui.fullscreenactivity.FullScreeActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.Fullscreen" />
+        <activity android:name=".ui.imagedetails.ImageDetailsPagerActivity"/>
     </application>
 
 </manifest>

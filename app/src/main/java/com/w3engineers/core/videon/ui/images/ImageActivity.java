@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.w3engineers.core.util.CheckVideoTypeUtil;
+import com.w3engineers.core.util.helper.MyDialogAdapter;
 import com.w3engineers.core.videon.R;
 import com.w3engineers.core.videon.data.local.commondatalistresponse.ApiCommonDetailListResponse;
 import com.w3engineers.core.videon.data.local.imagecategories.ImageCategories;
@@ -24,6 +25,7 @@ import com.w3engineers.core.videon.databinding.ActivityVideosBinding;
 import com.w3engineers.core.videon.ui.adapter.ImageAdapter;
 
 import com.w3engineers.core.videon.ui.imagedetails.ImageDetailsActivity;
+import com.w3engineers.core.videon.ui.imagedetails.ImageDetailsPagerActivity;
 import com.w3engineers.ext.strom.application.ui.base.BaseActivity;
 import com.w3engineers.ext.strom.application.ui.base.ItemClickListener;
 import com.w3engineers.ext.strom.util.helper.Toaster;
@@ -97,10 +99,20 @@ public class ImageActivity extends BaseActivity {
 
         mBinding.imagesRecyclerview.setAdapter(imageAdapter);
         mBinding.imagesRecyclerview.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+
         imageAdapter.setItemClickListener(new ItemClickListener<com.w3engineers.core.videon.data.local.images.Datum>() {
             @Override
             public void onItemClick(View view, com.w3engineers.core.videon.data.local.images.Datum item) {
-                ImageDetailsActivity.runActivity(ImageActivity.this,item);
+               int position=0;
+                for(Datum datum:mData)
+                {
+                    if(datum==item)
+                    {
+                        break;
+                    }
+                    position++;
+                }
+                ImageDetailsPagerActivity.runActivity(ImageActivity.this,mData,position);
             }
         });
     }
@@ -137,7 +149,7 @@ public class ImageActivity extends BaseActivity {
             }
         });
     }
-
+    private List<Datum> mData;
     private void getVideosByCategory(String cat_id)
     {
         mRemoteVideoApiInterface.getImagesByCategory(getResources().getString(R.string.api_token_value),cat_id,"0").enqueue(new Callback<ImageModel>() {
@@ -150,6 +162,7 @@ public class ImageActivity extends BaseActivity {
                     imageAdapter.clear();
                     if(videoData!=null)
                     {
+                        mData=videoData;
                         imageAdapter.addItems(videoData);
                     }
                     Log.d("datacheck","error:"+response.body());
