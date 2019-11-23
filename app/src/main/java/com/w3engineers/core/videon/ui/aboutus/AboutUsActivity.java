@@ -26,12 +26,17 @@ public class AboutUsActivity extends BaseActivity {
     protected int getLayoutId() {
         return R.layout.activity_about_us;
     }
+    @Override
+    public void onBackPressed() {
+        overridePendingTransition(R.anim.left_to_right, R.anim.right_to_left);
+        finish();
+    }
 
     @Override
     protected void startUI() {
         mBinding=(ActivityAboutUsBinding)getViewDataBinding();
         setSupportActionBar(mBinding.toolbarHome);
-        String string=getResources().getString(R.string.text_dummy_about_us);
+        String string=getResources().getString(R.string.text_about);
         mBinding.aboutUs.setText(HtmlCompat.fromHtml(string, 0));
 
     }

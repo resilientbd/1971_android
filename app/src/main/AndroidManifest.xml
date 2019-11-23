@@ -19,23 +19,25 @@
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        android:networkSecurityConfig="@xml/network_security_config"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup,android:label,android:supportsRtl">
+        <activity android:name=".ui.contactus.ContactUsActivity"></activity>
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/sample_app_id" />
-
         <meta-data
             android:name="firebase_crashlytics_collection_enabled"
             android:value="true" />
+
         <activity
             android:name=".ui.videodetails.VideoDetailsActivity"
             android:screenOrientation="portrait" />
@@ -63,7 +65,7 @@
         <activity
             android:name=".ui.setting.SettingActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden"/>
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".ui.seeallvideos.SeeAllVideosActivity"
             android:screenOrientation="portrait"
@@ -87,14 +89,14 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-<!--        <service android:name="com.w3engineers.core.util.VideonInstanceIdService">
+        <!--
+        <service android:name="com.w3engineers.core.util.VideonInstanceIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
-        </service>-->
-        <service android:name="com.w3engineers.core.util.MyJobService" />
-
-        <!-- The activity below is needed while cropping images -->
+        </service>
+        -->
+        <service android:name="com.w3engineers.core.util.MyJobService" /> <!-- The activity below is needed while cropping images -->
         <activity android:name=".ui.aboutus.AboutUsActivity" />
         <activity
             android:name=".ui.privacypolicy.PrivacyPolicyActivity"
@@ -106,15 +108,18 @@
         <activity android:name=".ui.createnewpassword.CreateNewPasswordActivity" />
         <activity android:name=".ui.welcome.WelcomeActivity" />
         <activity android:name=".ui.loadingerror.LoadingErrorActivity" />
-        <activity android:name=".ui.downloadmanager.DownloadManagerActivity"></activity>
-        <activity android:name=".ui.videos.VideosActivity"></activity>
-        <activity android:name=".ui.images.ImageActivity"></activity>
-        <activity android:name=".ui.audio.AudioActivity"/>
-        <activity android:name=".ui.document.DocumentActivity"/>
-        <activity android:name=".ui.documentdetails.DocumentDetailsActivity"/>
-        <activity android:name=".ui.audiodetails.AudioDetailsActivity"/>
-        <activity android:name=".ui.imagedetails.ImageDetailsActivity"/>
-        <activity android:name=".ui.fullscreenactivity.FullScreeActivity" android:theme="@style/AppTheme.Fullscreen" android:screenOrientation="landscape"/>
+        <activity android:name=".ui.downloadmanager.DownloadManagerActivity" />
+        <activity android:name=".ui.videos.VideosActivity" />
+        <activity android:name=".ui.images.ImageActivity" />
+        <activity android:name=".ui.audio.AudioActivity" />
+        <activity android:name=".ui.document.DocumentActivity" />
+        <activity android:name=".ui.documentdetails.DocumentDetailsActivity" />
+        <activity android:name=".ui.audiodetails.AudioDetailsActivity" />
+        <activity android:name=".ui.imagedetails.ImageDetailsActivity" />
+        <activity
+            android:name=".ui.fullscreenactivity.FullScreeActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen" />
     </application>
 
 </manifest>

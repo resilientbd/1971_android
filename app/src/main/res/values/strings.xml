@@ -110,7 +110,6 @@
     <string name="forgot_pass_reset_password">Reset Password</string>
     <string name="text_old_password">Old password</string>
     <string name="text_dummy_about_us"><![CDATA[<h1>About Videon</h1> \t\t<h4>A forever-free version of videon that’s YOURS, and yours for life. Preview and play all you want - there’s lots of videos ( Movie , Drama, Song and funny video) to discover.</h4> \t\t<h4>Let\'s Play!</h4> \t\t<ul> \t\t\t<li>Watch on any android mobile device</li> \t\t\t<li>You can even Download & Watch Offline for lifetime</li> \t\t\t<li>You can set the PLAYLIST and FAVOURITE list</li> \t\t\t<li>FRESH ON THE FEED: Get first dibs on bite-sized videos, offers & more!</li> \t\t\t<li>Everything from LIVE news and music, to lifestyle and events. Stream your favourite channels now on videon LIVE.</li> \t\t\t<li>Dedicated kids section</li> \t\t</ul>]]></string>
-
     <string name="text_please_login">Please Login to get access your profile</string>
     <string name="title_featured_video">Featured Videos</string>
     <string name="title_most_popular">Most Popular Videos</string>

@@ -28,9 +28,8 @@ public class PrivacyPolicyActivity extends BaseActivity {
     @Override
     protected void startUI() {
        mBinding=(ActivityPrivacyPolicyBinding) getViewDataBinding();
-       setSupportActionBar(mBinding.toolbarHome);
-       String string=getResources().getString(R.string.privacy_policy_desc);
-       mBinding.contentText.setText(HtmlCompat.fromHtml(string, 0));
+       setSupportActionBar(mBinding.toolbarPrivacy);
+       mBinding.privacyWebview.loadUrl("file:///android_asset/privacy_policy_app.html");
     }
 
     @Override

@@ -8,10 +8,10 @@
         android:layout_height="match_parent">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar_home"
+            android:id="@+id/toolbar_privacy"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_56"
-            android:background="@color/white"
+            android:background="@color/colorPrimary"
             android:textSize="@dimen/text_toolbar_title_size"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:layout_constraintEnd_toEndOf="parent"
@@ -20,32 +20,27 @@
             app:navigationIcon="@drawable/ic_back"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:title="@string/privacy_policy_toolbar"
-            app:titleTextColor="@color/color_home_category_title" />
-
-        <ScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar_home">
+            app:titleTextColor="@color/white" />
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/height_56"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_privacy"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 android:padding="@dimen/padding_16">
-
-                <TextView
-                    android:id="@+id/contentText"
+                <WebView
+                    android:id="@+id/privacy_webview"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
 
-                    android:text="@string/text_dummy_about_us"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    tools:ignore="MissingConstraints" />
+                    />
             </android.support.constraint.ConstraintLayout>
-        </ScrollView>
+
 
     </android.support.constraint.ConstraintLayout>
 </layout>

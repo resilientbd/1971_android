@@ -10,7 +10,7 @@
             android:id="@+id/toolbar_home"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_56"
-            android:background="@color/white"
+            android:background="@color/colorPrimary"
             android:textSize="@dimen/text_toolbar_title_size"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:layout_constraintEnd_toEndOf="parent"
@@ -19,7 +19,7 @@
             app:navigationIcon="@drawable/ic_back"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:title="About us"
-            app:titleTextColor="@color/color_home_category_title" />
+            app:titleTextColor="@color/white" />
 
         <ScrollView
             android:id="@+id/scrollView"
@@ -39,8 +39,9 @@
                     android:id="@+id/about_us"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                   
-                    android:text="@string/text_dummy_about_us"
+                    android:textSize="24dp"
+                    android:textAlignment="center"
+                    android:text="@string/text_about"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

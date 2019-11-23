@@ -1,11 +1,13 @@
 package com.w3engineers.core.videon.ui.home;
 
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -70,16 +72,19 @@ import com.w3engineers.core.videon.data.local.commondatalistresponse.Datum;
 import com.w3engineers.core.videon.data.remote.RemoteApiProvider;
 import com.w3engineers.core.videon.data.remote.home.RemoteVideoApiInterface;
 import com.w3engineers.core.videon.databinding.ActivityHomeBinding;
+import com.w3engineers.core.videon.ui.aboutus.AboutUsActivity;
 import com.w3engineers.core.videon.ui.adapter.CommonDataAdapter;
 import com.w3engineers.core.videon.ui.adapter.HomeCategoryAdapter;
 import com.w3engineers.core.videon.ui.audio.AudioActivity;
 import com.w3engineers.core.videon.ui.channellist.ChannelListActivity;
+import com.w3engineers.core.videon.ui.contactus.ContactUsActivity;
 import com.w3engineers.core.videon.ui.document.DocumentActivity;
 import com.w3engineers.core.videon.ui.downloadmanager.DownloadManagerActivity;
 import com.w3engineers.core.videon.ui.empty.EmptyActivity;
 import com.w3engineers.core.videon.ui.images.ImageActivity;
 import com.w3engineers.core.videon.ui.login.LoginActivity;
 import com.w3engineers.core.videon.ui.myprofile.MyProfileActivity;
+import com.w3engineers.core.videon.ui.privacypolicy.PrivacyPolicyActivity;
 import com.w3engineers.core.videon.ui.searchmovies.SearchMoviesActivity;
 import com.w3engineers.core.videon.ui.seeallvideos.SeeAllVideosActivity;
 import com.w3engineers.core.videon.ui.setting.SettingActivity;
@@ -1216,16 +1221,24 @@ public class HomeActivity extends BaseActivity implements ItemClickListener<Mode
         }
         switch (menuItem.getItemId()) {
                 case R.id.nav_about_us:
+                    startActivity(new Intent(HomeActivity.this, AboutUsActivity.class));
                         Log.d("chk","about us");
                     return true;
                 case R.id.nav_contact_us:
+                    startActivity(new Intent(HomeActivity.this, ContactUsActivity.class));
 
                     return true;
                 case R.id.nav_rating:
+                    try{
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+getPackageName())));
+                    }
+                    catch (ActivityNotFoundException e){
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+getPackageName())));
+                    }
 
                     return true;
                 case R.id.nav_privacy:
-
+                    startActivity(new Intent(HomeActivity.this, PrivacyPolicyActivity.class));
                     return true;
 
                 default:
